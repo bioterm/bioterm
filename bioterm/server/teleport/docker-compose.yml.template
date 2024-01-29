@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  teleport:
+    image: public.ecr.aws/gravitational/teleport:14
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/teleport/teleport.yaml:/etc/teleport/teleport.yaml:ro
+      - /srv/docker/teleport/data:/var/lib/teleport
+    healthcheck:
+      test: tctl status
+      interval: 2s
+      timeout: 2s
+      retries: 3
+      start_period: 5s
+networks:
+  default:
+    name: bioterm-net
+    external: true

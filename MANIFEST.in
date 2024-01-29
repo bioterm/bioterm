@@ -1,0 +1,6 @@
+graft bioterm
+include bioterm/common/core/logger_conf.yaml
+include requirements.txt
+global-exclude *~ *.py[cod] *.so
+prune tests
+prune deployment

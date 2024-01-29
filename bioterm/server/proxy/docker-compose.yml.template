@@ -1,0 +1,36 @@
+version: "3.4"
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    volumes:
+      - /srv/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /srv/docker/certbot/conf:/etc/letsencrypt
+      - /srv/docker/certbot/www:/var/www/certbot
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+  # all certbot related lines are marked to allow the container to be disabled automatically when working locally with self-signed certificates
+  certbot: #certbot
+    image: certbot/certbot:latest #certbot
+    restart: unless-stopped #certbot
+    volumes: #certbot
+      - /srv/docker/certbot/conf:/etc/letsencrypt #certbot
+      - /srv/docker/certbot/www:/var/www/certbot #certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'" #certbot
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+  nginx-exporter:
+    image: nginx/nginx-prometheus-exporter:0.10.0
+    # ports:
+    #   - "9113:9113"
+    command: "-nginx.scrape-uri=http://nginx/metrics"
+networks:
+  default:
+    name: bioterm-net
+    external: true

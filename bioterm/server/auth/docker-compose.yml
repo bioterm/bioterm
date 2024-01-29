@@ -1,0 +1,121 @@
+---
+version: "3.4"
+
+services:
+  postgresql:
+    image: docker.io/library/postgres:12-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
+    volumes:
+      - /srv/docker/authentik/database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${PG_PASS:?database password required}
+      - POSTGRES_USER=${PG_USER:-authentik}
+      - POSTGRES_DB=${PG_DB:-authentik}
+    env_file:
+      - .env
+  redis:
+    image: docker.io/library/redis:alpine
+    command: --save 60 1 --loglevel warning
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
+    volumes:
+      - /srv/docker/authentik/redis:/data
+  authentik:
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2023.5.4}
+    restart: unless-stopped
+    command: server
+    environment:
+      AUTHENTIK_HOST_BROWSER: "http://localhost/auth/"
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-authentik}
+      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      AUTHENTIK_AVATARS: "https://www.gravatar.com/avatar/%(mail_hash)s?d=monsterid"
+      # AUTHENTIK_ERROR_REPORTING__ENABLED: "true"
+    volumes:
+      - /srv/docker/authentik/media:/media
+      - /srv/docker/authentik/templates:/templates
+      - ./background.jpg:/web/dist/assets/images/flow_background.jpg
+      - /srv/docker/authentik/geoip:/geoip
+      #- /srv/docker/authentik/dist/custom.css:/web/dist/custom.css:ro
+    env_file:
+      - .env
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+    # ports:
+    #   - "0.0.0.0:${AUTHENTIK_PORT_HTTP:-9000}:9000"
+    #   - "0.0.0.0:${AUTHENTIK_PORT_HTTPS:-9443}:9443"
+  worker:
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2023.5.4}
+    restart: unless-stopped
+    user: root
+    #<<: *authentik-worker-environment
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        #---CUSTOM_CSS_APPEND
+        read -r -d '' CSS << EOM
+        input {border-radius: 3px;border: 1px solid transparent;border-top: none;border-bottom: 1px solid #DDD;box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;}
+        a[href^="https://goauthentik.io"] {display:none !important}
+        a[href^="https://unsplash.com"] {display:none !important}
+        EOM
+        echo "$$CSS" >> web/dist/custom.css
+
+        #---CUSTOM_CSS_HEADER
+        for FILE in web/dist/flow/*; do
+            sed -i "s|</header>|<link rel="stylesheet" type="text/css" href="/static/dist/custom.css"></header>|g" $$FILE
+        done
+
+        cp -R web/dist/* /dist
+
+        /usr/local/bin/dumb-init -- /lifecycle/ak worker
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: ${PG_USER:-authentik}
+      AUTHENTIK_POSTGRESQL__NAME: ${PG_DB:-authentik}
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${PG_PASS}
+      # AUTHENTIK_ERROR_REPORTING__ENABLED: "true"
+      # This is optional, and can be removed. If you remove this, the following will happen
+      # - The permissions for the /media folders aren't fixed, so make sure they are 1000:1000
+      # - The docker socket can't be accessed anymore
+    volumes:
+      - /srv/docker/authentik/media:/media
+      - /srv/docker/certbot/conf:/certs
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/docker/authentik/templates:/templates
+      - /srv/docker/authentik/geoip:/geoip
+      - /srv/docker/authentik/dist:/dist
+    env_file:
+      - .env
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+  geoipupdate:
+    image: "maxmindinc/geoipupdate:latest"
+    volumes:
+      - /srv/docker/authentik/geoip:/usr/share/GeoIP
+    environment:
+      GEOIPUPDATE_EDITION_IDS: "GeoLite2-City"
+      GEOIPUPDATE_FREQUENCY: "8"
+    env_file:
+      - .env
+
+networks:
+  default:
+    name: bioterm-net
+    external: true

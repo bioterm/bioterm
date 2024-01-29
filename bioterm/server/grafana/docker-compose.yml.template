@@ -1,0 +1,101 @@
+version: "3.8"
+services:
+  grafana:
+    # image: grafana/grafana:8.2.3-ubuntu
+    image: grafana/grafana:main-ubuntu
+    # user: "0" # not required if /srv/docker/grafana is owned by user 472
+    # ports:
+    #   - 3001:3001
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - /srv/docker/grafana:/var/lib/grafana
+      # - ./grafana.ini:/etc/grafana/grafana.ini
+      # - /srv/docker/certbot/conf/live/${NGINX_PRIMARY_DOMAIN}:/etc/certs:ro
+      # - /srv/docker/certbot/conf/archive:/archive:ro
+      # - ./certs/exampleCA.pem:/etc/ssl/certs/exampleCA.pem:ro # this was used for local deployment with self-signed certificates, it's most likely obsolete
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+    environment:
+      GF_SECURITY_ADMIN_USER: "admin"
+      GF_SECURITY_ALLOW_EMBEDDING: "true"
+      GF_SERVER_PROTOCOL: "http"
+      GF_SERVER_HTTP_PORT: 3001
+      # GF_SERVER_PROTOCOL: "https"
+      # GF_SERVER_CERT_FILE: "/etc/certs/fullchain.pem"
+      # GF_SERVER_CERT_KEY: "/etc/certs/privkey.pem"
+      GF_AUTH_GENERIC_OAUTH_ENABLED: "true"
+      GF_AUTH_GENERIC_OAUTH_NAME: "bioterm"
+      GF_AUTH_GENERIC_OAUTH_SCOPES: "openid profile email"
+      # Optionally enable auto-login (bypasses Grafana login screen)
+      GF_AUTH_OAUTH_AUTO_LOGIN: "true"
+      GF_AUTH_JWT_ENABLED: "true"
+      GF_AUTH_JWT_HEADER_NAME: "X-JWT-Assertion"
+      GF_AUTH_JWT_URL_LOGIN: "true"
+      GF_AUTH_JWT_USERNAME_CLAIN: "sub"
+      GF_AUTH_JWT_EMAIL_CLAIM: "sub"
+      GF_AUTH_JWT_AUTO_SIGN_UP: "true"
+      # Optionally map user groups to Grafana roles
+      GF_AUTH_GENERIC_OAUTH_ROLE_ATTRIBUTE_PATH: "contains(groups[*], 'authentik Admins') && 'Admin' || contains(groups[*], 'Grafana Editors') && 'Editor' || 'Viewer'"
+      GF_DASHBOARDS_MIN_REFRESH_INTERVAL: "1s"
+  loki:
+    image: grafana/loki:2.8.2
+    volumes:
+      - ./loki-config.yml:/etc/loki/loki-config.yml
+    # ports:
+    #   - "3100:3100"
+    restart: unless-stopped
+    command: -config.file=/etc/loki/loki-config.yml
+  promtail:
+    image: grafana/promtail:2.8.2
+    volumes:
+      - /var/log:/var/log:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./promtail-config.yml:/etc/promtail/promtail-config.yml
+    expose:
+      - 1514
+    # ports:
+    #   - "1514:1514" # this is only needed if you are going to send syslogs
+    restart: unless-stopped
+    command: -config.file=/etc/promtail/promtail-config.yml
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.47.2
+    restart: unless-stopped
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    expose:
+      - 8080
+    # ports:
+    #   - 8085:8080
+  prometheus:
+    image: prom/prometheus:latest
+    user: "0"
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - /srv/docker/prometheus/data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      # - '--alertmanager.url=http://alertmanager:9093'
+    expose:
+      - 9090
+    # ports:
+    #   - 9090:9090
+    links:
+      - cadvisor:cadvisor
+      - node-exporter:node-exporter
+  node-exporter:
+    image: prom/node-exporter:latest
+    restart: unless-stopped
+    expose:
+      - 9100
+networks:
+  default:
+    name: bioterm-net
+    external: true

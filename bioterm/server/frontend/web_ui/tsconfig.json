@@ -1,0 +1,6 @@
+{
+  "extends": "@quasar/app-webpack/tsconfig-preset.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

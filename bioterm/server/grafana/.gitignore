@@ -1,0 +1,2 @@
+# explicitly ignoring the docker-compose.yml file created from the template
+docker-compose.yml

@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  bioterm-webui:
+    image: bioterm/server/frontend:latest
+    restart: unless-stopped
+    # expose:
+    #   - 8081
+    # ports:
+    #   - "8081:8081"
+    entrypoint:
+    command: '/bin/bash -c "cd /app && quasar serve /app/dist/pwa/ -p 8081"'
+    # use the command below instead to serve a spa, if the bioterm/server/frontend image was building a spa
+    # command: '/bin/bash -c "cd /app && quasar serve /app/dist/spa/ -p 8081"'
+
+networks:
+  default:
+    name: bioterm-net
+    external: true

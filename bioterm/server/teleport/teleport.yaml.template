@@ -1,0 +1,40 @@
+version: v3
+teleport:
+  data_dir: /var/lib/teleport
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+  ca_pin: ""
+  diag_addr: ""
+auth_service:
+  enabled: true
+  cluster_name: "${TELEPORT_PUBLIC_DOMAIN}" # update to your own public domain
+  listen_addr: 0.0.0.0:3025
+  proxy_listener_mode: multiplex
+  authentication:
+    second_factor: on
+    webauthn:
+      rp_id: ${TELEPORT_PUBLIC_DOMAIN} # update to your own public domain
+ssh_service:
+  enabled: true
+  commands:
+  - name: hostname
+    command: [hostname]
+    period: 1m0s
+proxy_service:
+  enabled: true
+  web_listen_addr: 0.0.0.0:3080
+  public_addr: ${TELEPORT_PUBLIC_DOMAIN}:443 # update to your own public domain
+  https_keypairs: []
+  https_keypairs_reload_interval: 0s
+  acme: {}
+  trust_x_forwarded_for: true
+# optional: enable the app service
+# app_service:
+#   enabled: true
+#   debug_app: true
+#   apps:
+#   - name: test
+#     uri: http://localhost:8000

@@ -1,0 +1,13 @@
+[Unit]
+Description=demoDevice Service
+After=network.target
+
+[Service]
+User=your_username
+Group=dialout
+WorkingDirectory=${BIOTERM_ROOT_DIRECTORY}
+ExecStart=${BIOTERM_ROOT_DIRECTORY}/bioterm/devices/.venv/bin/python -m bioterm.devices.demo.demoDevice /path/to/jsonconfig
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

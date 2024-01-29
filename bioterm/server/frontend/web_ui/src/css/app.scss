@@ -1,0 +1,51 @@
+// app global css in SCSS form
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: -0.01562em;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: -0.00833em;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: normal;
+}
+h4 {
+  font-size: 2.125rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  letter-spacing: 0.00735em;
+}
+h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: normal;
+}
+h6 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: 0.0125em;
+}
+p {
+  margin: 0 0 16px;
+}
+
+.q-item__label--caption {
+  color: $primary; /* Adjust this color to what you need */
+}

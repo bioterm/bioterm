@@ -1,0 +1,1520 @@
+{
+  "id": 1,
+  "name": "Setup",
+  "description": "bioterm Services",
+  "lastModifiedDate": "2024-01-25T23:11:15Z",
+  "lastModifiedAgent": "structurizr-javascript",
+  "properties": {
+    "structurizr.dsl": "LyoKICBiaW90ZXJtIEFyY2hpdGVjdHVyZQoqLwoKLyogQ29uc3RhbnQgdmFsdWVzICovCiFjb25zdGFudCBPUkdBTklTQVRJT05fTkFNRSAiYmlvdGVybSIKIWNvbnN0YW50IEdST1VQX05BTUUgImJpb3Rlcm0iCgp3b3Jrc3BhY2UgIlNldHVwIiAiYmlvdGVybSBTZXJ2aWNlcyIgIHsKCiAgbW9kZWwgewojICAgICBiaW90ZXJtID0gZW50ZXJwcmlzZSAiJHtPUkdBTklTQVRJT05fTkFNRX0gLSAke0dST1VQX05BTUV9IiB7CgogICAgICB1c2VyID0gcGVyc29uICJVc2VyIgogICAgICBhZG1pbiA9IHBlcnNvbiAiQWRtaW4iCgogICAgICBzZXJpYWxEZXZpY2VTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiTGFiIERldmljZSBjb25uZWN0ZWQgdG8gQ29udHJvbGxlciIgewogICAgICAgICAgICBzZXJpYWxEZXZpY2VGaXJtd2FyZSA9IGNvbnRhaW5lciAiTGFiIERldmljZSBGaXJtd2FyZSIKICAgICAgfQoKICAgICAgc2VyaWFsRGV2aWNlU3lzdGVtMiA9IHNvZnR3YXJlU3lzdGVtICJMYWIgRGV2aWNlIGNvbm5lY3RlZCB0byBHYXRld2F5IiB7CiAgICAgICAgICAgIHNlcmlhbERldmljZUZpcm13YXJlMiA9IGNvbnRhaW5lciAiTGFiIERldmljZSBGaXJtd2FyZSAyIgogICAgICB9CgogICAgICB0ZWxlcG9ydFN5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJBY2Nlc3MgUHJveHkgU3lzdGVtIiB7CiAgICAgICAgICAgIHRlbGVwb3J0ID0gY29udGFpbmVyICJUZWxlcG9ydCBTZXJ2ZXIiCiAgICAgIH0KCiAgICAgIHNhYWRTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiU29mdHdhcmUgYXMgYSBEZXZpY2UiIHsKICAgICAgICAgICAgc2FhZENvbnRhaW5lciA9IGNvbnRhaW5lciAiU29mdHdhcmUgYXMgYSBEZXZpY2UiCiAgICAgIH0KCiAgICAgIGJpb3Rlcm1TZXJ2ZXIgPSBzb2Z0d2FyZVN5c3RlbSAiYmlvdGVybSBTZXJ2ZXIgU3lzdGVtIiB7CiAgICAgICAgICAgIGdyb3VwICJEb2NrZXJpemVkIChEb2NrZXIgQ29tcG9zZSkiICB7CiAgICAgICAgICAgICAgICAgIGFwaSA9IGNvbnRhaW5lciAiYmlvdGVybSBBUEkiICJiaW90ZXJtIEJhY2tlbmQgQVBJIiAiUHl0aG9uL0Zhc3RBUEkiICJweXRob24iCiAgICAgICAgICAgICAgICAgIHB3YSA9IGNvbnRhaW5lciAiYmlvdGVybSBXZWIgQXBwIiAiVXNlciBpbnRlcmZhY2UiICJIVE1ML1R5cGVzY3JpcHQvVnVlL1F1YXNhciIgInF1YXNhciIKICAgICAgICAgICAgICAgICAgLyogd2ViQXBwbGljYXRpb24gPSBjb250YWluZXIgIldlYiBTZXJ2ZXIiICJEZWxpdmVycyB0aGUgYmlvdGVybSBwcm9ncmVzc2l2ZSB3ZWIgYXBwIiAiTlBNIEhUVFBTIFNlcnZlciIgKi8KICAgICAgICAgICAgICAgICAgZ3JhZmFuYSA9IGNvbnRhaW5lciAiR3JhZmFuYSIgIlByb3ZpZGVzIHZpc3VhbGl6YXRpb24iICJncmFmYW5hIiAiZ3JhZmFuYSIKICAgICAgICAgICAgICAgICAgcmVkaXMgPSBjb250YWluZXIgIlJlZGlzIiAiSW50ZXJwcm9jZXNzIENvbW11bmljYXRpb24iICJyZWRpcyIgInJlZGlzIgogICAgICAgICAgICAgICAgICBwb3N0Z3JlU1FMID0gY29udGFpbmVyICJTUUwgRGF0YWJhc2UiICJTdG9yZXMgYXBwbGljYXRpb24gYW5kIGRldmljZSBkYXRhIiAiUG9zdGdyZVNRTC9UaW1lc2NhbGVEQiIgInBvc3RncmVzcWwiCiAgICAgICAgICAgICAgICAgIGRhdGFiYXNlV29ya2VyID0gY29udGFpbmVyICJEYXRhYmFzZSBXb3JrZXIiICJXcml0ZXMgZGV2aWNlIGRhdGEgdG8gZGF0YWJhc2UiICJQeXRob24iICJweXRob24iCiAgICAgICAgICAgICAgICAgIGlkZW50aXR5UHJvdmlkZXIgPSBjb250YWluZXIgIklkZW50aXR5IFByb3ZpZGVyIiAiTWFuYWdlcyBhdXRoZW50aWNhdGlvbiBhbmQgaXNzdWVzIEpXVCIgIkF1dGhlbnRpayIgImF1dGhlbnRpayIKICAgICAgICAgICAgICAgICAgZWxuID0gY29udGFpbmVyICJlTGFiRlRXIiAiRWxlY3Ryb25pYyBMYWIgTm90ZWJvb2siICJlTGFiRlRXIiAiZWxhYmZ0dyIKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgfQoKICAgICAgYmlvdGVybUNvbnRyb2xsZXIgPSBzb2Z0d2FyZVN5c3RlbSAiYmlvdGVybSBDb250cm9sbGVyKHMpIiB7CiAgICAgICAgICAgIGdyb3VwICJEb2NrZXJpemVkIChEb2NrZXIgQ29tcG9zZSkiICB7CiAgICAgICAgICAgICAgICAgIHJlZGlzQ29udHJvbGxlciA9IGNvbnRhaW5lciAiUmVkaXMiICJQdWIvU3ViLCBSZWRpcyBTdHJlYW1zLCBJbi1NZW1vcnkgREIiICJyZWRpcyIgInJlZGlzIgogICAgICAgICAgICAgICAgICByZWdpc3RyYXRpb25TZXJ2aWNlID0gY29udGFpbmVyICJSZWdpc3RyYXRpb24gU2VydmljZSIgIiIgIlB5dGhvbiIKICAgICAgICAgICAgICAgICAgd2Vic29ja2V0V29ya2VyID0gY29udGFpbmVyICJXZWJzb2NrZXQgV29ya2VyIiAiVHVubmVscyBkYXRhIHBhY2thZ2VzIHRvL2Zyb20gc2VydmVyIiAicHl0aG9uIgogICAgICAgICAgICAgICAgICBjZW50cmFsQ29udHJvbCA9IGNvbnRhaW5lciAiU3RhdGUgTWFuYWdlbWVudCAvIENvbnRyb2wgUHJvY2VzcyIgIkV2YWx1YXRlcyBkYXRhcG9pbnRzIGFuZCBSUENzIiAicHl0aG9uIgogICAgICAgICAgICB9CiAgICAgICAgICAgIC8qIGJpb3Rlcm1EZXZpY2VBZGFwdGVyMSA9IGNvbnRhaW5lciAiYmlvdGVybSBEZXZpY2UgQWRhcHRlciIgIiIgIlB5dGhvbiIgKi8KICAgICAgICAgICAgLyogZGV2aWNlRHJpdmVyU2VyaWFsRGV2aWNlT25Db250cm9sbGVyID0gY29udGFpbmVyICJEZXZpY2UgRHJpdmVyIGZvciBTZXJpYWwgRGV2aWNlIiAiIiAiUHl0aG9uIiAqLwogICAgICB9CgoKCiAgICAgIGJpb3Rlcm1EZXZpY2VHYXRld2F5ID0gc29mdHdhcmVTeXN0ZW0gImJpb3Rlcm0gRGV2aWNlIEdhdGV3YXkiIHsKICAgICAgICAgICAgYmlvdGVybURldmljZUFkYXB0ZXIyID0gY29udGFpbmVyICJiaW90ZXJtIERldmljZSBBZGFwdGVyIiAiIiAiUHl0aG9uIgogICAgICAgICAgICBkZXZpY2VEcml2ZXJTZXJpYWxEZXZpY2VPbkdhdGV3YXkgPSBjb250YWluZXIgIkRldmljZSBEcml2ZXIgZm9yIFNlcmlhbCBEZXZpY2UiICIiICJQeXRob24iCiAgICAgIH0KCiAgICAgIGJpb3Rlcm1EZXZpY2VEcml2ZXIgPSBzb2Z0d2FyZVN5c3RlbSAiYmlvdGVybSBEZXZpY2UgU3lzdGVtIiB7CiAgICAgICAgICAgIGRldmljZURyaXZlciA9IGNvbnRhaW5lciAiYmlvdGVybSBEZXZpY2UgRHJpdmVyIiB7CiAgICAgICAgICAgICAgICAgIGRldmljZUFkYXB0ZXJDb21wb25lbnQgPSBjb21wb25lbnQgImJpb3Rlcm0gRGV2aWNlIEFkYXB0ZXIiICIiICIiICJQeXRob24iCiAgICAgICAgICAgICAgICAgIGRldmljZURyaXZlckNvbXBvbmVudCA9IGNvbXBvbmVudCAiRGV2aWNlIERyaXZlciIgIiIgIiIgIlB5dGhvbiIKICAgICAgICAgICAgfQogICAgICB9CgogICAgICBiaW90ZXJtRGV2aWNlID0gc29mdHdhcmVTeXN0ZW0gImJpb3Rlcm0gRGV2aWNlIFByb2Nlc3MiIHsKICAgICAgICAgICAgIGRldmljZU1hbmFnZXIgPSBjb250YWluZXIgIkRldmljZSBNYW5hZ2VyIiAiIiAiIiAiUHl0aG9uIgogICAgICB9CgogICAgICBiYWNrdXBTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiYmFja3VwIiB7CiAgICAgICAgICAgIGJhY2t1cENvbnRhaW5lciA9IGNvbnRhaW5lciAiYmFja3VwIgogICAgICB9CgoKICAgICAgYmlvdGVybURldmljZSAtPiBiaW90ZXJtQ29udHJvbGxlciAiQ29tbXVuaWNhdGVzIHdpdGgiICJUQ1AiCiAgICAgIHNhYWRTeXN0ZW0gLT4gYmlvdGVybUNvbnRyb2xsZXIgIkNvbW11bmljYXRlcyB3aXRoIiAiVENQIgoKICAgICAgcmVnaXN0cmF0aW9uU2VydmljZSAtPiByZWRpc0NvbnRyb2xsZXIgIkNvbW11bmljYXRlcyB3aXRoIiAiVENQIgogICAgICB3ZWJzb2NrZXRXb3JrZXIgLT4gcmVkaXNDb250cm9sbGVyICJDb21tdW5pY2F0ZXMgd2l0aCIgIlRDUCIKICAgICAgYmlvdGVybURldmljZSAtPiByZWRpc0NvbnRyb2xsZXIgIkNvbW11bmljYXRlcyB3aXRoIiAiVENQIgogICAgICAvKiBkZXZpY2VEcml2ZXJTZXJpYWxEZXZpY2VPbkNvbnRyb2xsZXIgLT4gYmlvdGVybURldmljZUFkYXB0ZXIxICJVc2VzIiAqLwogICAgICAvKiBkZXZpY2VEcml2ZXJTZXJpYWxEZXZpY2VPbkNvbnRyb2xsZXIgLT4gc2VyaWFsRGV2aWNlU3lzdGVtICJDb250cm9scyIgIlJTMjMyL1JTNDg1L1VTQiIgKi8KICAgICAgLyogYmlvdGVybURldmljZUFkYXB0ZXIxIC0+IHJlZGlzQ29udHJvbGxlciAiU2VuZHMgZGV2aWNlIHJlZ2lzdHJhdGlvbiBhbmQgZGF0YXBvaW50cywgY2hlY2tzIGZvciBSUENzIiAqLwogICAgICAvKiBiaW90ZXJtRGV2aWNlQWRhcHRlcjIgLT4gcmVkaXNDb250cm9sbGVyICJTZW5kcyBkZXZpY2UgcmVnaXN0cmF0aW9uIGFuZCBkYXRhcG9pbnRzLCBjaGVja3MgZm9yIFJQQ3MiICovCiAgICAgIGNlbnRyYWxDb250cm9sIC0+IHJlZGlzQ29udHJvbGxlciAiQ29tbXVuaWNhdGVzIHdpdGgiICJUQ1AiCgogICAgICBkZXZpY2VEcml2ZXJTZXJpYWxEZXZpY2VPbkdhdGV3YXkgLT4gc2VyaWFsRGV2aWNlU3lzdGVtMiAiQ29udHJvbHMiICJSUzIzMi9SUzQ4NS9VU0IiCgogICAgICBwd2EgLT4gYXBpICJDb25uZWN0cyB0byIgIkpTT04vSFRUUFMiCiAgICAgIGFwaSAtPiBncmFmYW5hICJDb25uZWN0cyB0byIgIkpTT04vSFRUUFMiCiAgICAgIGFwaSAtPiBlbG4gIkNvbm5lY3RzIHRvIiAiSlNPTi9IVFRQUyIKICAgICAgYXBpIC0+IHJlZGlzICJSZWFkcy9Xcml0ZXMiICJUQ1AiCiAgICAgIGFwaSAtPiBwb3N0Z3JlU1FMICJSZWFkcy9Xcml0ZXMiICJUQ1AiCiAgICAgIGRhdGFiYXNlV29ya2VyIC0+IHJlZGlzICJSZWFkcyIgIlRDUCIKICAgICAgZGF0YWJhc2VXb3JrZXIgLT4gcG9zdGdyZVNRTCAiV3JpdGVzIiAiVENQIgogICAgICBpZGVudGl0eVByb3ZpZGVyIC0+IHB3YSAiUHJvdmlkZXMgb0F1dGgyIGF1dGhlbnRpY2F0aW9uIGZvciBiaW90ZXJtIEFQSSIgIkhUVFBTIgogICAgICBpZGVudGl0eVByb3ZpZGVyIC0+IGdyYWZhbmEgIlByb3ZpZGVzIG9BdXRoMiBhdXRoZW50aWNhdGlvbiIgIkhUVFBTIgogICAgICBpZGVudGl0eVByb3ZpZGVyIC0+IGVsbiAiUHJvdmlkZXMgU0FNTCBhdXRoZW50aWNhdGlvbiIgIkhUVFBTIgogICAgICByZWdpc3RyYXRpb25TZXJ2aWNlIC0+IGFwaSAiUmVnaXN0ZXJzIGNvbnRyb2xsZXIgYW5kIGRldmljZXMiICJIVFRQUyIKICAgICAgd2Vic29ja2V0V29ya2VyIC0+IGFwaSAiSW5pdGlhdGVzIGJpZGlyZWN0aW9uYWwgY29tbXVuaWNhdGlvbiIgIldTUyIKCiAgICAgIGdyYWZhbmEgLT4gcHdhICJQcm92aWRlcyBkZXZpY2UgdmlzdWFsaXphdGlvbiB0byIgImlmcmFtZS9IVFRQUyIKICAgICAgZ3JhZmFuYSAtPiBwb3N0Z3JlU1FMICJSZWFkcyIgIlRDUCIKCiAgICAgIGFkbWluIC0+IHRlbGVwb3J0U3lzdGVtICJVc2VzIgogICAgICB1c2VyIC0+IHB3YSAiVXNlcyIKICAgICAgdXNlciAtPiBlbG4gIlVzZXMiCiAgICAgIHVzZXIgLT4gaWRlbnRpdHlQcm92aWRlciAiVXNlcyIKICAgICAgLyogaWRlbnRpdHlQcm92aWRlciAtPiB1c2VyICJSZXR1cm5zIEpXVCIgKi8KICAgICAgLyogaWRlbnRpdHlQcm92aWRlciAtPiBhZG1pbiAiUmV0dXJucyBKV1QiICovCgoKCiMgICAgIH0KCiAgLyogRGVwbG95bWVudCAvIEluZnJhc3RydWN0dXJlICovCiAgICAgIHByb2R1Y3Rpb24gPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIlByb2R1Y3Rpb24iIHsKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgImJpb3Rlcm0gRGF0YSBDZW50ZXIiIHsKICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkhpZ2ggQXZhaWxhYmlsaXR5IFNlcnZlciBDbHVzdGVyIiAiIiAiUHJveG1veCIgewogICAgICAgICAgICAgICAgICAgICAgICBiaW90ZXJtVk0gPSBkZXBsb3ltZW50Tm9kZSAiVmlydHVhbCBNYWNoaW5lIiAiIiAiVWJ1bnR1IDIyLjA0IiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNvZnR3YXJlU3lzdGVtSW5zdGFuY2UgYmlvdGVybVNlcnZlcgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAjICBjb250YWluZXJJbnN0YW5jZSBhcGkKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBiYWNrdXBWTSA9IGluZnJhc3RydWN0dXJlTm9kZSAiQmFja3VwIFN0b3JhZ2UgVk0iICIiICJVYnVudHUgMjIuMDQiCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgaW5mcmFzdHJ1Y3R1cmVOb2RlICJWTSBCYWNrdXAgU2VydmVyIiAiIiAiUHJveG1veCIKICAgICAgICAgICAgICAgICAgIyBiaW90ZXJtRmlyZXdhbGwgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIkZpcmV3YWxsIGFuZCBSb3V0ZXIiICIiICJwZlNlbnNlIgoKICAgICAgICAgICAgfQogICAgICAgICAgICAjIGRlcGxveW1lbnROb2RlICJDbG91ZCBTZXJ2ZXIiIHsKICAgICAgICAgICAgIyAgICAgY29udGFpbmVySW5zdGFuY2UgYXBpCiAgICAgICAgICAgICMgfQogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRXh0ZXJuYWxseSBNYW5hZ2VkIE5ldHdvcmsiIHsKICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgImJpb3Rlcm0gQ29udHJvbGxlciIgewogICAgICAgICAgICAgICAgICAgICAgICBiaW90ZXJtQ29udHJvbGxlckluc3RhbmNlID0gc29mdHdhcmVTeXN0ZW1JbnN0YW5jZSBiaW90ZXJtQ29udHJvbGxlcgogICAgICAgICAgICAgICAgICAgICAgICBkZXZpY2VPbkNvbnRyb2xsZXJJbnN0YW5jZTEgPSBzb2Z0d2FyZVN5c3RlbUluc3RhbmNlIGJpb3Rlcm1EZXZpY2UKICAgICAgICAgICAgICAgICAgICAgICAgZGV2aWNlT25Db250cm9sbGVySW5zdGFuY2UyID0gc29mdHdhcmVTeXN0ZW1JbnN0YW5jZSBiaW90ZXJtRGV2aWNlCiAgICAgICAgICAgICAgICAgICAgICAgICMgY29udGFpbmVySW5zdGFuY2UgcmVkaXNDb250cm9sbGVyCiAgICAgICAgICAgICAgICAgICAgICAgICMgY29udGFpbmVySW5zdGFuY2UgcmVnaXN0cmF0aW9uU2VydmljZQogICAgICAgICAgICAgICAgICAgICAgICAjIGNvbnRhaW5lckluc3RhbmNlIHdlYnNvY2tldFdvcmtlcgogICAgICAgICAgICAgICAgICAgICAgICAjIGNvbnRhaW5lckluc3RhbmNlIGFjY2Vzc1Byb3h5Q2xpZW50CiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkxvY2FsIEdQVSBTZXJ2ZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgc29mdHdhcmVTeXN0ZW1JbnN0YW5jZSBzYWFkU3lzdGVtCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgIyBkZXBsb3ltZW50Tm9kZSAiYmlvdGVybURldmljZSIgewogICAgICAgICAgICAgICAgICAjICAgICAgIHNvZnR3YXJlU3lzdGVtSW5zdGFuY2UgYmlvdGVybURldmljZQogICAgICAgICAgICAgICAgICAjIH0KICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgImJpb3Rlcm0gR2F0ZXdheSIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXZpY2VPbkdhdGV3YXlJbnN0YW5jZSA9IHNvZnR3YXJlU3lzdGVtSW5zdGFuY2UgYmlvdGVybURldmljZQogICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIHNlcmlhbERldmljZTEgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIkxhYiBEZXZpY2Ugd2l0aCBTZXJpYWwgQ29tbXVuaWNhdGlvbiIKICAgICAgICAgICAgICAgICAgc2VyaWFsRGV2aWNlMiA9IGluZnJhc3RydWN0dXJlTm9kZSAiTGFiIERldmljZSB3aXRoIFNlcmlhbCBDb21tdW5pY2F0aW9uIDIiCiAgICAgICAgICAgICAgICAgIG5ldHdvcmtEZXZpY2UgPSBpbmZyYXN0cnVjdHVyZU5vZGUgIkxhYiBEZXZpY2Ugd2l0aCBOZXR3b3JrZWQgQ29tbXVuaWNhdGlvbiIKICAgICAgICAgICAgICAgICAgIyBvdGhlckZpcmV3YWxsID0gaW5mcmFzdHJ1Y3R1cmVOb2RlICJFeHRlcm5hbGx5IE1hbmFnZWQgRmlyZXdhbGwgYW5kIFJvdXRlciIKCiAgICAgICAgICAgIH0KCiAgICAgICAgfQoKCiAgICAgIGRldmljZU9uQ29udHJvbGxlckluc3RhbmNlMSAtPiBuZXR3b3JrRGV2aWNlICJDb250cm9scyIgIkV0aGVybmV0L1dpZmkiCiAgICAgIGRldmljZU9uQ29udHJvbGxlckluc3RhbmNlMiAtPiBzZXJpYWxEZXZpY2UyICJDb250cm9scyIgIlJTMjMyL1JTMjg1L1VTQiIKICAgICAgZGV2aWNlT25HYXRld2F5SW5zdGFuY2UgLT4gc2VyaWFsRGV2aWNlMSAiQ29udHJvbHMiICJSUzIzMi9SUzI4NS9VU0IiCiAgICAgICMgb3RoZXJGaXJld2FsbCAtPiBiaW90ZXJtRmlyZXdhbGwgIkFsbG93cyBvdXRnb2luZyBjb25uZWN0aW9ucyBvbiBwb3J0IDQ0MyB0byIKICAgICAgIyBiaW90ZXJtRmlyZXdhbGwgLT4gYmlvdGVybVZNICJUZXN0IgoKIC8qIEVuZCBPZiBQcm9kdWN0aW9uIERlcGxveW1lbnQgRW52aXJvbm1lbnQgKi8KCiAgfQogIHZpZXdzIHsKICAgLyogT3ZlcmFsbCBzeXN0ZW0gKi8KICAgc3lzdGVtTGFuZHNjYXBlIHsKICAgIGluY2x1ZGUgKgogICAgYXV0b0xheW91dCBscgogICB9CiAgIGRlcGxveW1lbnQgKiBwcm9kdWN0aW9uIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgc3lzdGVtQ29udGV4dCBiaW90ZXJtU2VydmVyIHsKICAgICAgaW5jbHVkZSAqCiAgICAgIGF1dG9MYXlvdXQKICAgIH0KICAgIGNvbnRhaW5lciBiaW90ZXJtU2VydmVyIHNlcnZlclZpZXcgIkNvbXBsZXRlIFNlcnZlciB2aWV3IiB7CiAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgaW5jbHVkZSB1c2VyCiAgICB9CiAgICBjb250YWluZXIgYmlvdGVybUNvbnRyb2xsZXIgY29udHJvbGxlclZpZXcgIkNvbXBsZXRlIENvbnRyb2xsZXIgdmlldyIgewogICAgICAgIGluY2x1ZGUgKgogICAgfQoKICAgIC8qIFRoZW1lIGZvciB2aWV3cyAqLwogICAgdGhlbWVzIGRlZmF1bHQgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25pbHNzdGEvc3RydWN0dXJpenJfdGhlbWUvbWFpbi90aGVtZXMvYmlvdGVybS5qc29uCgogIH0KfQo="
+  },
+  "configuration": {},
+  "model": {
+    "people": [
+      {
+        "id": "2",
+        "tags": "Element,Person",
+        "properties": {
+          "structurizr.dsl.identifier": "admin"
+        },
+        "name": "Admin",
+        "relationships": [
+          {
+            "id": "62",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "6f518570-a5ab-4a18-8211-fb97c3599709"
+            },
+            "sourceId": "2",
+            "destinationId": "7",
+            "description": "Uses"
+          }
+        ],
+        "location": "Unspecified"
+      },
+      {
+        "id": "1",
+        "tags": "Element,Person",
+        "properties": {
+          "structurizr.dsl.identifier": "user"
+        },
+        "name": "User",
+        "relationships": [
+          {
+            "id": "66",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "199f7e6f-bf90-4e9b-82ad-06871440e099"
+            },
+            "sourceId": "1",
+            "destinationId": "18",
+            "description": "Uses"
+          },
+          {
+            "id": "65",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "2b78a9ac-a173-4381-988f-77df83520699"
+            },
+            "sourceId": "1",
+            "destinationId": "19",
+            "description": "Uses"
+          },
+          {
+            "id": "63",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "7976d0a3-2465-45f3-8ac2-ac1d589f891a"
+            },
+            "sourceId": "1",
+            "destinationId": "13",
+            "description": "Uses"
+          },
+          {
+            "id": "64",
+            "sourceId": "1",
+            "destinationId": "11",
+            "description": "Uses",
+            "linkedRelationshipId": "63"
+          }
+        ],
+        "location": "Unspecified"
+      }
+    ],
+    "softwareSystems": [
+      {
+        "id": "7",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "teleportsystem"
+        },
+        "name": "Access Proxy System",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "8",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "teleport"
+            },
+            "name": "Teleport Server",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "11",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "biotermserver"
+        },
+        "name": "bioterm Server System",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "12",
+            "tags": "Element,Container,python",
+            "properties": {
+              "structurizr.dsl.identifier": "api"
+            },
+            "name": "bioterm API",
+            "description": "bioterm Backend API",
+            "relationships": [
+              {
+                "id": "46",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "a4c21f91-50fb-4711-b6fe-866d27232624"
+                },
+                "sourceId": "12",
+                "destinationId": "19",
+                "description": "Connects to",
+                "technology": "JSON/HTTPS"
+              },
+              {
+                "id": "47",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "9ddacc9a-4dae-4df4-91d7-382f7aa8cfcc"
+                },
+                "sourceId": "12",
+                "destinationId": "15",
+                "description": "Reads/Writes",
+                "technology": "TCP"
+              },
+              {
+                "id": "48",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "cf24433f-e903-4cd3-9883-86bb8457ea94"
+                },
+                "sourceId": "12",
+                "destinationId": "16",
+                "description": "Reads/Writes",
+                "technology": "TCP"
+              },
+              {
+                "id": "45",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "93947d6c-1218-436d-8142-4a1a7a89f296"
+                },
+                "sourceId": "12",
+                "destinationId": "14",
+                "description": "Connects to",
+                "technology": "JSON/HTTPS"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "Python/FastAPI",
+            "documentation": {}
+          },
+          {
+            "id": "13",
+            "tags": "Element,Container,quasar",
+            "properties": {
+              "structurizr.dsl.identifier": "pwa"
+            },
+            "name": "bioterm Web App",
+            "description": "User interface",
+            "relationships": [
+              {
+                "id": "44",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "ef992d64-f3fe-4238-ac9f-009e12d49e71"
+                },
+                "sourceId": "13",
+                "destinationId": "12",
+                "description": "Connects to",
+                "technology": "JSON/HTTPS"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "HTML/Typescript/Vue/Quasar",
+            "documentation": {}
+          },
+          {
+            "id": "14",
+            "tags": "Element,Container,grafana",
+            "properties": {
+              "structurizr.dsl.identifier": "grafana"
+            },
+            "name": "Grafana",
+            "description": "Provides visualization",
+            "relationships": [
+              {
+                "id": "60",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "f0c0bd5a-1280-451a-ab68-11c5b714d856"
+                },
+                "sourceId": "14",
+                "destinationId": "13",
+                "description": "Provides device visualization to",
+                "technology": "iframe/HTTPS"
+              },
+              {
+                "id": "61",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "11b32df7-4e65-4cf8-864e-5fa2f05d70c9"
+                },
+                "sourceId": "14",
+                "destinationId": "16",
+                "description": "Reads",
+                "technology": "TCP"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "grafana",
+            "documentation": {}
+          },
+          {
+            "id": "15",
+            "tags": "Element,Container,redis",
+            "properties": {
+              "structurizr.dsl.identifier": "redis"
+            },
+            "name": "Redis",
+            "description": "Interprocess Communication",
+            "group": "Dockerized (Docker Compose)",
+            "technology": "redis",
+            "documentation": {}
+          },
+          {
+            "id": "16",
+            "tags": "Element,Container,postgresql",
+            "properties": {
+              "structurizr.dsl.identifier": "postgresql"
+            },
+            "name": "SQL Database",
+            "description": "Stores application and device data",
+            "group": "Dockerized (Docker Compose)",
+            "technology": "PostgreSQL/TimescaleDB",
+            "documentation": {}
+          },
+          {
+            "id": "19",
+            "tags": "Element,Container,elabftw",
+            "properties": {
+              "structurizr.dsl.identifier": "eln"
+            },
+            "name": "eLabFTW",
+            "description": "Electronic Lab Notebook",
+            "group": "Dockerized (Docker Compose)",
+            "technology": "eLabFTW",
+            "documentation": {}
+          },
+          {
+            "id": "18",
+            "tags": "Element,Container,authentik",
+            "properties": {
+              "structurizr.dsl.identifier": "identityprovider"
+            },
+            "name": "Identity Provider",
+            "description": "Manages authentication and issues JWT",
+            "relationships": [
+              {
+                "id": "51",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "b6f72cd0-1d5e-42de-a616-800747aa2a21"
+                },
+                "sourceId": "18",
+                "destinationId": "13",
+                "description": "Provides oAuth2 authentication for bioterm API",
+                "technology": "HTTPS"
+              },
+              {
+                "id": "52",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "95c3baee-dbd8-44b9-b6dc-fc81cdf8cf58"
+                },
+                "sourceId": "18",
+                "destinationId": "14",
+                "description": "Provides oAuth2 authentication",
+                "technology": "HTTPS"
+              },
+              {
+                "id": "53",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "96c35f24-032a-41e3-8251-5fa180db4002"
+                },
+                "sourceId": "18",
+                "destinationId": "19",
+                "description": "Provides SAML authentication",
+                "technology": "HTTPS"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "Authentik",
+            "documentation": {}
+          },
+          {
+            "id": "17",
+            "tags": "Element,Container,python",
+            "properties": {
+              "structurizr.dsl.identifier": "databaseworker"
+            },
+            "name": "Database Worker",
+            "description": "Writes device data to database",
+            "relationships": [
+              {
+                "id": "49",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "25c4013e-9e10-4dc7-a201-6511fb289dbc"
+                },
+                "sourceId": "17",
+                "destinationId": "15",
+                "description": "Reads",
+                "technology": "TCP"
+              },
+              {
+                "id": "50",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "67acf263-6a36-4c5b-b6d1-4fb40bc8d03f"
+                },
+                "sourceId": "17",
+                "destinationId": "16",
+                "description": "Writes",
+                "technology": "TCP"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "Python",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "32",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "biotermdevice"
+        },
+        "name": "bioterm Device Process",
+        "relationships": [
+          {
+            "id": "36",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "2672e40e-6c59-48e9-9c6b-89fa6989968e"
+            },
+            "sourceId": "32",
+            "destinationId": "20",
+            "description": "Communicates with",
+            "technology": "TCP"
+          },
+          {
+            "id": "40",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "086fbd56-0bf5-4edf-9b43-db03102b0e73"
+            },
+            "sourceId": "32",
+            "destinationId": "21",
+            "description": "Communicates with",
+            "technology": "TCP"
+          }
+        ],
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "33",
+            "tags": "Element,Container,Python",
+            "properties": {
+              "structurizr.dsl.identifier": "devicemanager"
+            },
+            "name": "Device Manager",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "25",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "biotermdevicegateway"
+        },
+        "name": "bioterm Device Gateway",
+        "relationships": [
+          {
+            "id": "43",
+            "sourceId": "25",
+            "destinationId": "5",
+            "description": "Controls",
+            "technology": "RS232/RS485/USB",
+            "linkedRelationshipId": "42"
+          }
+        ],
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "26",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "biotermdeviceadapter2"
+            },
+            "name": "bioterm Device Adapter",
+            "technology": "Python",
+            "documentation": {}
+          },
+          {
+            "id": "27",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "devicedriverserialdeviceongateway"
+            },
+            "name": "Device Driver for Serial Device",
+            "relationships": [
+              {
+                "id": "42",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "899ecfe0-dba3-4b7d-b6c3-24f9548abbfb"
+                },
+                "sourceId": "27",
+                "destinationId": "5",
+                "description": "Controls",
+                "technology": "RS232/RS485/USB"
+              }
+            ],
+            "technology": "Python",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "9",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "saadsystem"
+        },
+        "name": "Software as a Device",
+        "relationships": [
+          {
+            "id": "37",
+            "tags": "Relationship",
+            "properties": {
+              "structurizr.dsl.identifier": "97e3c2be-cc14-47fc-8964-d6d982ad64e1"
+            },
+            "sourceId": "9",
+            "destinationId": "20",
+            "description": "Communicates with",
+            "technology": "TCP"
+          }
+        ],
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "10",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "saadcontainer"
+            },
+            "name": "Software as a Device",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "20",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "biotermcontroller"
+        },
+        "name": "bioterm Controller(s)",
+        "relationships": [
+          {
+            "id": "56",
+            "sourceId": "20",
+            "destinationId": "12",
+            "description": "Registers controller and devices",
+            "technology": "HTTPS",
+            "linkedRelationshipId": "54"
+          },
+          {
+            "id": "57",
+            "sourceId": "20",
+            "destinationId": "11",
+            "description": "Registers controller and devices",
+            "technology": "HTTPS",
+            "linkedRelationshipId": "54"
+          }
+        ],
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "22",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "registrationservice"
+            },
+            "name": "Registration Service",
+            "relationships": [
+              {
+                "id": "55",
+                "sourceId": "22",
+                "destinationId": "11",
+                "description": "Registers controller and devices",
+                "technology": "HTTPS",
+                "linkedRelationshipId": "54"
+              },
+              {
+                "id": "38",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "1eb9e2cb-cfb4-41ae-a2c8-43ff29369cc2"
+                },
+                "sourceId": "22",
+                "destinationId": "21",
+                "description": "Communicates with",
+                "technology": "TCP"
+              },
+              {
+                "id": "54",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "6a3cb44e-ceff-47aa-95d6-4688be64c906"
+                },
+                "sourceId": "22",
+                "destinationId": "12",
+                "description": "Registers controller and devices",
+                "technology": "HTTPS"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "Python",
+            "documentation": {}
+          },
+          {
+            "id": "24",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "centralcontrol"
+            },
+            "name": "State Management / Control Process",
+            "description": "Evaluates datapoints and RPCs",
+            "relationships": [
+              {
+                "id": "41",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "e575bf28-ac47-432f-95d2-3765c67ab72c"
+                },
+                "sourceId": "24",
+                "destinationId": "21",
+                "description": "Communicates with",
+                "technology": "TCP"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "python",
+            "documentation": {}
+          },
+          {
+            "id": "21",
+            "tags": "Element,Container,redis",
+            "properties": {
+              "structurizr.dsl.identifier": "rediscontroller"
+            },
+            "name": "Redis",
+            "description": "Pub/Sub, Redis Streams, In-Memory DB",
+            "group": "Dockerized (Docker Compose)",
+            "technology": "redis",
+            "documentation": {}
+          },
+          {
+            "id": "23",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "websocketworker"
+            },
+            "name": "Websocket Worker",
+            "description": "Tunnels data packages to/from server",
+            "relationships": [
+              {
+                "id": "59",
+                "sourceId": "23",
+                "destinationId": "11",
+                "description": "Initiates bidirectional communication",
+                "technology": "WSS",
+                "linkedRelationshipId": "58"
+              },
+              {
+                "id": "58",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "86b19849-bb64-4803-99d1-28b3f5494ee2"
+                },
+                "sourceId": "23",
+                "destinationId": "12",
+                "description": "Initiates bidirectional communication",
+                "technology": "WSS"
+              },
+              {
+                "id": "39",
+                "tags": "Relationship",
+                "properties": {
+                  "structurizr.dsl.identifier": "a3d1e549-c345-472d-8770-52fe3cd3164c"
+                },
+                "sourceId": "23",
+                "destinationId": "21",
+                "description": "Communicates with",
+                "technology": "TCP"
+              }
+            ],
+            "group": "Dockerized (Docker Compose)",
+            "technology": "python",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "34",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "backupsystem"
+        },
+        "name": "backup",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "35",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "backupcontainer"
+            },
+            "name": "backup",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "5",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "serialdevicesystem2"
+        },
+        "name": "Lab Device connected to Gateway",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "6",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "serialdevicefirmware2"
+            },
+            "name": "Lab Device Firmware 2",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "28",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "biotermdevicedriver"
+        },
+        "name": "bioterm Device System",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "29",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "devicedriver"
+            },
+            "name": "bioterm Device Driver",
+            "components": [
+              {
+                "id": "30",
+                "tags": "Element,Component,Python",
+                "properties": {
+                  "structurizr.dsl.identifier": "deviceadaptercomponent"
+                },
+                "name": "bioterm Device Adapter",
+                "documentation": {}
+              },
+              {
+                "id": "31",
+                "tags": "Element,Component,Python",
+                "properties": {
+                  "structurizr.dsl.identifier": "devicedrivercomponent"
+                },
+                "name": "Device Driver",
+                "documentation": {}
+              }
+            ],
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      },
+      {
+        "id": "3",
+        "tags": "Element,Software System",
+        "properties": {
+          "structurizr.dsl.identifier": "serialdevicesystem"
+        },
+        "name": "Lab Device connected to Controller",
+        "location": "Unspecified",
+        "containers": [
+          {
+            "id": "4",
+            "tags": "Element,Container",
+            "properties": {
+              "structurizr.dsl.identifier": "serialdevicefirmware"
+            },
+            "name": "Lab Device Firmware",
+            "documentation": {}
+          }
+        ],
+        "documentation": {}
+      }
+    ],
+    "deploymentNodes": [
+      {
+        "id": "73",
+        "tags": "Element,Deployment Node",
+        "properties": {
+          "structurizr.dsl.identifier": "89570fce-3220-4bc4-ac2b-24c6a88899aa"
+        },
+        "name": "Externally Managed Network",
+        "environment": "Production",
+        "instances": "1",
+        "children": [
+          {
+            "id": "74",
+            "tags": "Element,Deployment Node",
+            "properties": {
+              "structurizr.dsl.identifier": "de8ecf9e-c96a-4877-871f-f899eadbf678"
+            },
+            "name": "bioterm Controller",
+            "environment": "Production",
+            "instances": "1",
+            "softwareSystemInstances": [
+              {
+                "id": "75",
+                "tags": "Software System Instance",
+                "properties": {
+                  "structurizr.dsl.identifier": "biotermcontrollerinstance"
+                },
+                "relationships": [
+                  {
+                    "id": "76",
+                    "sourceId": "75",
+                    "destinationId": "70",
+                    "description": "Registers controller and devices",
+                    "technology": "HTTPS",
+                    "linkedRelationshipId": "57"
+                  }
+                ],
+                "environment": "Production",
+                "deploymentGroups": ["Default"],
+                "instanceId": 1,
+                "softwareSystemId": "20"
+              },
+              {
+                "id": "77",
+                "tags": "Software System Instance",
+                "properties": {
+                  "structurizr.dsl.identifier": "deviceoncontrollerinstance1"
+                },
+                "relationships": [
+                  {
+                    "id": "90",
+                    "tags": "Relationship",
+                    "properties": {
+                      "structurizr.dsl.identifier": "5d9c2dec-5bc3-4658-aba9-e9219f4cf12d"
+                    },
+                    "sourceId": "77",
+                    "destinationId": "89",
+                    "description": "Controls",
+                    "technology": "Ethernet/Wifi"
+                  },
+                  {
+                    "id": "78",
+                    "sourceId": "77",
+                    "destinationId": "75",
+                    "description": "Communicates with",
+                    "technology": "TCP",
+                    "linkedRelationshipId": "36"
+                  }
+                ],
+                "environment": "Production",
+                "deploymentGroups": ["Default"],
+                "instanceId": 1,
+                "softwareSystemId": "32"
+              },
+              {
+                "id": "79",
+                "tags": "Software System Instance",
+                "properties": {
+                  "structurizr.dsl.identifier": "deviceoncontrollerinstance2"
+                },
+                "relationships": [
+                  {
+                    "id": "91",
+                    "tags": "Relationship",
+                    "properties": {
+                      "structurizr.dsl.identifier": "0ba633fc-2ecd-4b12-b6b7-9b29a6430e13"
+                    },
+                    "sourceId": "79",
+                    "destinationId": "88",
+                    "description": "Controls",
+                    "technology": "RS232/RS285/USB"
+                  },
+                  {
+                    "id": "80",
+                    "sourceId": "79",
+                    "destinationId": "75",
+                    "description": "Communicates with",
+                    "technology": "TCP",
+                    "linkedRelationshipId": "36"
+                  }
+                ],
+                "environment": "Production",
+                "deploymentGroups": ["Default"],
+                "instanceId": 2,
+                "softwareSystemId": "32"
+              }
+            ]
+          },
+          {
+            "id": "84",
+            "tags": "Element,Deployment Node",
+            "properties": {
+              "structurizr.dsl.identifier": "5c0dc15e-d2cf-4a4a-b0be-31d8d616965d"
+            },
+            "name": "bioterm Gateway",
+            "environment": "Production",
+            "instances": "1",
+            "softwareSystemInstances": [
+              {
+                "id": "85",
+                "tags": "Software System Instance",
+                "properties": {
+                  "structurizr.dsl.identifier": "deviceongatewayinstance"
+                },
+                "relationships": [
+                  {
+                    "id": "92",
+                    "tags": "Relationship",
+                    "properties": {
+                      "structurizr.dsl.identifier": "4b5c6600-4be1-4fdd-958b-dcbb2b058317"
+                    },
+                    "sourceId": "85",
+                    "destinationId": "87",
+                    "description": "Controls",
+                    "technology": "RS232/RS285/USB"
+                  },
+                  {
+                    "id": "86",
+                    "sourceId": "85",
+                    "destinationId": "75",
+                    "description": "Communicates with",
+                    "technology": "TCP",
+                    "linkedRelationshipId": "36"
+                  }
+                ],
+                "environment": "Production",
+                "deploymentGroups": ["Default"],
+                "instanceId": 1,
+                "softwareSystemId": "32"
+              }
+            ]
+          },
+          {
+            "id": "81",
+            "tags": "Element,Deployment Node",
+            "properties": {
+              "structurizr.dsl.identifier": "16d26437-2813-4b5f-ba7c-3bdcd7393522"
+            },
+            "name": "Local GPU Server",
+            "environment": "Production",
+            "instances": "1",
+            "softwareSystemInstances": [
+              {
+                "id": "82",
+                "tags": "Software System Instance",
+                "properties": {
+                  "structurizr.dsl.identifier": "3b5343b9-4424-44ee-812e-5848f235d4c0"
+                },
+                "relationships": [
+                  {
+                    "id": "83",
+                    "sourceId": "82",
+                    "destinationId": "75",
+                    "description": "Communicates with",
+                    "technology": "TCP",
+                    "linkedRelationshipId": "37"
+                  }
+                ],
+                "environment": "Production",
+                "deploymentGroups": ["Default"],
+                "instanceId": 1,
+                "softwareSystemId": "9"
+              }
+            ]
+          }
+        ],
+        "infrastructureNodes": [
+          {
+            "id": "88",
+            "tags": "Element,Infrastructure Node",
+            "properties": {
+              "structurizr.dsl.identifier": "serialdevice2"
+            },
+            "name": "Lab Device with Serial Communication 2",
+            "environment": "Production"
+          },
+          {
+            "id": "87",
+            "tags": "Element,Infrastructure Node",
+            "properties": {
+              "structurizr.dsl.identifier": "serialdevice1"
+            },
+            "name": "Lab Device with Serial Communication",
+            "environment": "Production"
+          },
+          {
+            "id": "89",
+            "tags": "Element,Infrastructure Node",
+            "properties": {
+              "structurizr.dsl.identifier": "networkdevice"
+            },
+            "name": "Lab Device with Networked Communication",
+            "environment": "Production"
+          }
+        ]
+      },
+      {
+        "id": "67",
+        "tags": "Element,Deployment Node",
+        "properties": {
+          "structurizr.dsl.identifier": "6994fe2a-9c8e-473d-8088-10b7e9490f40"
+        },
+        "name": "bioterm Data Center",
+        "environment": "Production",
+        "instances": "1",
+        "children": [
+          {
+            "id": "68",
+            "tags": "Element,Deployment Node",
+            "properties": {
+              "structurizr.dsl.identifier": "373f4cf6-c2ea-42fb-aee4-25e04f79a0b7"
+            },
+            "name": "High Availability Server Cluster",
+            "environment": "Production",
+            "technology": "Proxmox",
+            "instances": "1",
+            "children": [
+              {
+                "id": "69",
+                "tags": "Element,Deployment Node",
+                "properties": {
+                  "structurizr.dsl.identifier": "biotermvm"
+                },
+                "name": "Virtual Machine",
+                "environment": "Production",
+                "technology": "Ubuntu 22.04",
+                "instances": "1",
+                "softwareSystemInstances": [
+                  {
+                    "id": "70",
+                    "tags": "Software System Instance",
+                    "properties": {
+                      "structurizr.dsl.identifier": "356d5384-0767-45a9-9aea-1c1d6f34a201"
+                    },
+                    "environment": "Production",
+                    "deploymentGroups": ["Default"],
+                    "instanceId": 1,
+                    "softwareSystemId": "11"
+                  }
+                ]
+              }
+            ],
+            "infrastructureNodes": [
+              {
+                "id": "71",
+                "tags": "Element,Infrastructure Node",
+                "properties": {
+                  "structurizr.dsl.identifier": "backupvm"
+                },
+                "name": "Backup Storage VM",
+                "environment": "Production",
+                "technology": "Ubuntu 22.04"
+              }
+            ]
+          }
+        ],
+        "infrastructureNodes": [
+          {
+            "id": "72",
+            "tags": "Element,Infrastructure Node",
+            "properties": {
+              "structurizr.dsl.identifier": "c0b69591-ada3-4742-bf3c-78feb4007574"
+            },
+            "name": "VM Backup Server",
+            "environment": "Production",
+            "technology": "Proxmox"
+          }
+        ]
+      }
+    ]
+  },
+  "documentation": {},
+  "views": {
+    "systemLandscapeViews": [
+      {
+        "key": "SystemLandscape-001",
+        "order": 1,
+        "dimensions": {
+          "width": 2350,
+          "height": 4750
+        },
+        "automaticLayout": {
+          "implementation": "Graphviz",
+          "rankDirection": "LeftRight",
+          "rankSeparation": 300,
+          "nodeSeparation": 300,
+          "edgeSeparation": 0,
+          "vertices": false
+        },
+        "enterpriseBoundaryVisible": true,
+        "relationships": [
+          {
+            "id": "37"
+          },
+          {
+            "id": "36"
+          },
+          {
+            "id": "62"
+          },
+          {
+            "id": "43"
+          },
+          {
+            "id": "64"
+          },
+          {
+            "id": "57"
+          }
+        ],
+        "elements": [
+          {
+            "id": "11",
+            "x": 1699,
+            "y": 3625
+          },
+          {
+            "id": "34",
+            "x": 199,
+            "y": 200
+          },
+          {
+            "id": "25",
+            "x": 199,
+            "y": 2000
+          },
+          {
+            "id": "28",
+            "x": 199,
+            "y": 1400
+          },
+          {
+            "id": "1",
+            "x": 974,
+            "y": 3250
+          },
+          {
+            "id": "2",
+            "x": 224,
+            "y": 2600
+          },
+          {
+            "id": "3",
+            "x": 199,
+            "y": 800
+          },
+          {
+            "id": "5",
+            "x": 949,
+            "y": 2000
+          },
+          {
+            "id": "7",
+            "x": 949,
+            "y": 2650
+          },
+          {
+            "id": "9",
+            "x": 199,
+            "y": 4250
+          },
+          {
+            "id": "20",
+            "x": 949,
+            "y": 3950
+          },
+          {
+            "id": "32",
+            "x": 199,
+            "y": 3650
+          }
+        ]
+      }
+    ],
+    "systemContextViews": [
+      {
+        "key": "SystemContext-001",
+        "order": 3,
+        "softwareSystemId": "11",
+        "dimensions": {
+          "width": 1550,
+          "height": 1400
+        },
+        "automaticLayout": {
+          "implementation": "Graphviz",
+          "rankDirection": "TopBottom",
+          "rankSeparation": 300,
+          "nodeSeparation": 300,
+          "edgeSeparation": 0,
+          "vertices": false
+        },
+        "enterpriseBoundaryVisible": true,
+        "relationships": [
+          {
+            "id": "64"
+          },
+          {
+            "id": "57"
+          }
+        ],
+        "elements": [
+          {
+            "id": "11",
+            "x": 537,
+            "y": 899
+          },
+          {
+            "id": "1",
+            "x": 199,
+            "y": 199
+          },
+          {
+            "id": "20",
+            "x": 899,
+            "y": 249
+          }
+        ]
+      }
+    ],
+    "containerViews": [
+      {
+        "key": "serverView",
+        "order": 4,
+        "description": "Complete Server view",
+        "softwareSystemId": "11",
+        "dimensions": {
+          "width": 4284,
+          "height": 2805
+        },
+        "externalSoftwareSystemBoundariesVisible": true,
+        "relationships": [
+          {
+            "id": "61"
+          },
+          {
+            "id": "60"
+          },
+          {
+            "id": "50"
+          },
+          {
+            "id": "51"
+          },
+          {
+            "id": "63"
+          },
+          {
+            "id": "52",
+            "vertices": [
+              {
+                "x": 2165,
+                "y": 1590
+              }
+            ]
+          },
+          {
+            "id": "53"
+          },
+          {
+            "id": "65"
+          },
+          {
+            "id": "44",
+            "vertices": [
+              {
+                "x": 2155,
+                "y": 1350
+              }
+            ]
+          },
+          {
+            "id": "56"
+          },
+          {
+            "id": "66"
+          },
+          {
+            "id": "45"
+          },
+          {
+            "id": "46"
+          },
+          {
+            "id": "47"
+          },
+          {
+            "id": "48"
+          },
+          {
+            "id": "49"
+          }
+        ],
+        "elements": [
+          {
+            "id": "12",
+            "x": 1638,
+            "y": 1140
+          },
+          {
+            "id": "1",
+            "x": 2964,
+            "y": 1095
+          },
+          {
+            "id": "13",
+            "x": 2301,
+            "y": 1650
+          },
+          {
+            "id": "14",
+            "x": 1638,
+            "y": 1630
+          },
+          {
+            "id": "15",
+            "x": 975,
+            "y": 750
+          },
+          {
+            "id": "16",
+            "x": 975,
+            "y": 1645
+          },
+          {
+            "id": "17",
+            "x": 975,
+            "y": 1145
+          },
+          {
+            "id": "18",
+            "x": 2301,
+            "y": 1145
+          },
+          {
+            "id": "19",
+            "x": 2301,
+            "y": 710
+          },
+          {
+            "id": "20",
+            "x": 1638,
+            "y": 299
+          }
+        ]
+      },
+      {
+        "key": "controllerView",
+        "order": 5,
+        "description": "Complete Controller view",
+        "softwareSystemId": "20",
+        "paperSize": "A5_Portrait",
+        "dimensions": {
+          "width": 1566,
+          "height": 2441
+        },
+        "externalSoftwareSystemBoundariesVisible": true,
+        "relationships": [
+          {
+            "id": "40"
+          },
+          {
+            "id": "41"
+          },
+          {
+            "id": "55"
+          },
+          {
+            "id": "59"
+          },
+          {
+            "id": "38"
+          },
+          {
+            "id": "39"
+          }
+        ],
+        "elements": [
+          {
+            "id": "22",
+            "x": 855,
+            "y": 1475
+          },
+          {
+            "id": "11",
+            "x": 820,
+            "y": 1975
+          },
+          {
+            "id": "23",
+            "x": 283,
+            "y": 1471
+          },
+          {
+            "id": "24",
+            "x": 140,
+            "y": 715
+          },
+          {
+            "id": "21",
+            "x": 825,
+            "y": 865
+          },
+          {
+            "id": "32",
+            "x": 825,
+            "y": 355
+          }
+        ]
+      }
+    ],
+    "deploymentViews": [
+      {
+        "key": "Deployment-001",
+        "order": 2,
+        "paperSize": "A4_Landscape",
+        "dimensions": {
+          "width": 3508,
+          "height": 2480
+        },
+        "environment": "Production",
+        "relationships": [
+          {
+            "id": "83"
+          },
+          {
+            "id": "80"
+          },
+          {
+            "id": "91"
+          },
+          {
+            "id": "92"
+          },
+          {
+            "id": "86"
+          },
+          {
+            "id": "76"
+          },
+          {
+            "id": "78"
+          },
+          {
+            "id": "90"
+          }
+        ],
+        "elements": [
+          {
+            "id": "88",
+            "x": 2875,
+            "y": 235
+          },
+          {
+            "id": "77",
+            "x": 1758,
+            "y": 233
+          },
+          {
+            "id": "67",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "89",
+            "x": 1105,
+            "y": 220
+          },
+          {
+            "id": "68",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "79",
+            "x": 2240,
+            "y": 235
+          },
+          {
+            "id": "69",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "70",
+            "x": 1758,
+            "y": 1525
+          },
+          {
+            "id": "81",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "71",
+            "x": 1100,
+            "y": 1525
+          },
+          {
+            "id": "82",
+            "x": 990,
+            "y": 810
+          },
+          {
+            "id": "72",
+            "x": 441,
+            "y": 1525
+          },
+          {
+            "id": "84",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "73",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "85",
+            "x": 233,
+            "y": 233
+          },
+          {
+            "id": "74",
+            "x": 150,
+            "y": 150
+          },
+          {
+            "id": "75",
+            "x": 1758,
+            "y": 670
+          },
+          {
+            "id": "87",
+            "x": 235,
+            "y": 785
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      "branding": {},
+      "styles": {},
+      "themes": [
+        "https://static.structurizr.com/themes/default/theme.json",
+        "https://raw.githubusercontent.com/nilssta/structurizr_theme/main/themes/bioterm.json"
+      ],
+      "terminology": {},
+      "metadataSymbols": "SquareBrackets",
+      "lastSavedView": "SystemLandscape-001"
+    }
+  }
+}

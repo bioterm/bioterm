@@ -1,0 +1,90 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    command: >
+      redis-server
+      --requirepass ${REDIS_PW}
+      --loglevel warning
+      --tls-port 6379
+      --port 0
+      --tls-cert-file /usr/local/etc/redis/redis.crt
+      --tls-key-file /usr/local/etc/redis/redis.key
+      --tls-ca-cert-file /usr/local/etc/redis/ca.crt
+      --tls-auth-clients no
+    environment:
+      - REDIS_PASSWORD=${REDIS_PW}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "redis-cli",
+          "-p",
+          "6379",
+          "-a",
+          "${REDIS_PW}",
+          "--tls",
+          "--cacert",
+          "/usr/local/etc/redis/ca.crt",
+          "ping",
+        ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+    volumes:
+      - redis:/data
+      - /srv/docker/redis:/usr/local/etc/redis:ro
+  bioterm-registration-service:
+    image: bioterm/controller:latest
+    restart: always
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["python", "-m", "bioterm.controller.registrationservice.main"]
+    volumes:
+      - /srv/docker/redis/ca.crt:/usr/local/etc/ssl/certs/bioterm-local.crt:ro
+    env_file:
+      - .env
+  bioterm-wsworker:
+    image: bioterm/controller:latest
+    restart: always
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["python", "-m", "bioterm.controller.wsworker.main"]
+    volumes:
+      - /srv/docker/redis/ca.crt:/usr/local/etc/ssl/certs/bioterm-local.crt:ro
+    env_file:
+      - .env
+  bioterm-controlservice:
+    image: bioterm/controller:latest
+    restart: always
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["python", "-m", "bioterm.controller.controlservice.main"]
+    volumes:
+      - /srv/docker/redis/ca.crt:/usr/local/etc/ssl/certs/bioterm-local.crt:ro
+    env_file:
+      - .env
+  bioterm-streammanager:
+    image: bioterm/controller:latest
+    restart: always
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["python", "-m", "bioterm.controller.streammanager.main"]
+    volumes:
+      - /srv/docker/redis/ca.crt:/usr/local/etc/ssl/certs/bioterm-local.crt:ro
+    env_file:
+      - .env
+volumes:
+  redis:
+    driver: local
+# networks:
+#   default:
+#     name: bioterm-controller-net
+#     external: true

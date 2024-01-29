@@ -1,0 +1,33 @@
+name: Docs
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: ~
+permissions:
+  contents: write
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install -r docs/requirements_docs.txt
+      - name: Sphinx build
+        run: |
+          cd docs
+          sphinx-build source build
+      - name: Force-Push to gh-pages
+        shell: bash
+        run: |
+          export DEPLOY_JOB_SOURCE_COMMIT=$(git rev-parse --short HEAD)
+          cd docs/build
+          git init -b gh-pages
+          git config user.email "deploy@example.com"
+          git config user.name "GitHub Action Deploy"
+          touch .nojekyll
+          git add -A
+          git commit -m "Automatic Deploy of $DEPLOY_JOB_SOURCE_COMMIT"
+          git push -f https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages:gh-pages

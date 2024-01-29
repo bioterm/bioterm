@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Waiting...</title>
+</head>
+<body>
+  <script src='js/oidc-client-ts.min.js'></script>
+  <script>
+    console.log("Callback script running...");
+    var mgr = new oidc.UserManager({
+      userStore: new oidc.WebStorageStateStore({ store: window.localStorage }),
+      authority: "<%= AUTH0_DOMAIN %>",
+      metadataUrl: "<%= METADATA_URL %>",
+      response_type: 'code',
+      client_id: "<%= AUTHENTIK_CLIENT_ID %>",
+      loadUserInfo: true,
+      includeIdTokenInSilentRenew: true,
+      automaticSilentRenew: true,
+      monitorSession: true,
+      scope: 'openid profile email',
+      response_mode: any = 'query'});
+
+    mgr.signinRedirectCallback().then(function (user) {
+      window.location.href = '../#/home';
+    }).catch(function (err) {
+      console.log(err);
+      alert(err);
+    });
+  </script>
+</body>
+</html>
