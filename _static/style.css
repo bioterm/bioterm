@@ -1,0 +1,19 @@
+.wy-nav-content {
+    max-width: none;
+}
+
+.wy-side-nav-search{ 
+    background-color:#08a29e; 
+}
+
+.wy-nav-content a, .caption-text, .wy-breadcrumbs-aside {
+    color:#08a29e; 
+}
+
+/* .caption-text, .std-ref, .wy-breadcrumbs-aside, a, a.reference.internal{ 
+    color:#08a29e; 
+} */
+
+.breadcrumb-item, .breadcrumb-item a, .wy-breadcrumbs {
+    color: #9C27B0;
+}

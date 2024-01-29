@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../_static/bioterm_icon.svg" rel="icon" type="image/svg+xml">
+    <link href="../_static/bioterm_icon_16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../_static/bioterm_icon_32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="../_static/bioterm_icon_180x180.png" sizes="180x180" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Settings &mdash; bioterm 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Server setup" href="server/index.html" />
+    <link rel="prev" title="Deployment" href="index.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bioterm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generalities.html">General Specifications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Deployment</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Network Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/index.html">Server setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller/index.html">Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bioterm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Deployment</a></li>
+      <li class="breadcrumb-item active">Network Settings</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/deployment/network.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="network-settings">
+<h1>Network Settings<a class="headerlink" href="#network-settings" title="Link to this heading"></a></h1>
+<section id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Link to this heading"></a></h2>
+<p>By default, Docker uses 172.16.0.0/16 as the IP address range.
+If this leads to conflict with the LAN configuration due to overlapping IP address ranges, the default Docker IP address range can be changed.
+Changing the default Docker IP address range on an Ubuntu client requires modifying the Docker daemon configuration.
+Here’s a step-by-step guide to do that:</p>
+<ol class="arabic">
+<li><p><strong>Stop Docker Service</strong>: Before making changes, stop the Docker service to prevent any conflicts. Use the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>docker
+</pre></div>
+</div>
+</li>
+<li><p><strong>Edit Docker Daemon Configuration</strong>: Open the Docker daemon configuration file in a text editor (create it if it doesn’t exist).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/docker/daemon.json
+</pre></div>
+</div>
+<p>Add or modify the <cite>bip</cite> (bridge IP) setting to change the default subnet. For example, to change it to <cite>10.0.0.0/16</cite>, the configuration should look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;bip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10.0.0.1/16&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Save the file and exit the editor.</p>
+</li>
+<li><p><strong>Reload Docker System Daemon</strong>: To apply these changes, reload the system daemon and then restart the Docker service:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+<span class="gp">$ </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+</pre></div>
+</div>
+</li>
+<li><p><strong>Verify the Changes</strong>: Verify the changes by inspecting the Docker network:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>bridge
+</pre></div>
+</div>
+<p>This should show the new IP range for the default bridge network.</p>
+</li>
+<li><p><strong>Note on Existing Containers</strong>:
+This change will not affect the IP addresses of already running containers.
+To apply the new IP range, you will need to recreate these containers.</p></li>
+</ol>
+</section>
+<section id="controller">
+<h2>Controller<a class="headerlink" href="#controller" title="Link to this heading"></a></h2>
+<section id="uncomplicated-firewall-ufw">
+<h3>Uncomplicated Firewall (UFW)<a class="headerlink" href="#uncomplicated-firewall-ufw" title="Link to this heading"></a></h3>
+<p>It is recommended to enable the Uncomplicated Firewall (UFW) on the controller, especially when setting up the controller in a network managed by others.
+This applies in particular if Redis is operated without access data or SSL, in which case UFW should be used to block all incoming connections (provided that no external device [driver] requires access to Redis).</p>
+<p>The following command will display the current status of ufw.
+If <code class="docutils literal notranslate"><span class="pre">`Status:</span> <span class="pre">inactive`</span></code> is returned when running <code class="docutils literal notranslate"><span class="pre">`ufw</span> <span class="pre">status`</span></code>, it means the firewall is not yet enabled on the system.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ufw<span class="w"> </span>status<span class="w"> </span>verbose
+</pre></div>
+</div>
+<p>To enable ufw to block all incomming connections, run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+<span class="gp">$ </span>sudo<span class="w"> </span>ufw<span class="w"> </span>reload
+</pre></div>
+</div>
+<p>To enable access to Redis from an external device with a specific IP address using UFW, use the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span><span class="o">[</span>SPECIFIC_IP<span class="o">]</span><span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">6379</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Deployment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="server/index.html" class="btn btn-neutral float-right" title="Server setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nils Stanislawski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

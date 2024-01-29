@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_static/bioterm_icon.svg" rel="icon" type="image/svg+xml">
+    <link href="../../_static/bioterm_icon_16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../../_static/bioterm_icon_32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="../../_static/bioterm_icon_180x180.png" sizes="180x180" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificates &amp; Reverse Proxy &mdash; bioterm 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Teleport Setup" href="teleport.html" />
+    <link rel="prev" title="Server setup" href="index.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            bioterm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generalities.html">General Specifications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../network.html">Network Settings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Server setup</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Certificates &amp; Reverse Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="teleport.html">Teleport Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentik.html">Authentik Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elabftw.html">elabftw Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grafana.html">Grafana Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html">bioterm Backend Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html">App</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../controller/index.html">Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Development</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">bioterm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Deployment</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Server setup</a></li>
+      <li class="breadcrumb-item active">Certificates &amp; Reverse Proxy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/deployment/server/certificates.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="certificates-reverse-proxy">
+<span id="certificates"></span><h1>Certificates &amp; Reverse Proxy<a class="headerlink" href="#certificates-reverse-proxy" title="Link to this heading"></a></h1>
+<p>Run the <code class="file docutils literal notranslate"><span class="pre">init.sh</span></code> script, to generate the required <code class="file docutils literal notranslate"><span class="pre">.env</span></code> file based on the user input for the primary domain.
+The <code class="file docutils literal notranslate"><span class="pre">init.sh</span></code> script will also create the <code class="file docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file in the local directory and write the nginx configuration to <code class="file docutils literal notranslate"><span class="pre">/srv/docker/nginx/nginx.conf</span></code>.
+The script will prompt the user, whether certificates should be obtained using certbot or if self-signed certificates are to be used.
+Depending on the response, the certbot container will be commented out from the created <code class="file docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</p>
+<p>If creating the .env file manually, it should contain the following variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">NGINX_DOMAIN_LIST</span><span class="o">=</span><span class="s2">&quot;example.org app.example.org grafana.example.org eln.example.org auth.example.org api.example.org teleport.example.org&quot;</span>
+<span class="nv">NGINX_PRIMARY_DOMAIN</span><span class="o">=</span>example.org
+<span class="nv">NGINX_PROXY_PASS</span><span class="o">=</span><span class="s2">&quot;http://example.org&quot;</span>
+<span class="nv">LETSENCRYPT_EMAIL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">LETSENCRYPT_STAGING</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<span class="nv">APP_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;app.example.org&quot;</span>
+<span class="nv">ELN_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;eln.example.org&quot;</span>
+<span class="nv">AUTH_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;auth.example.org&quot;</span>
+<span class="nv">GRAFANA_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;grafana.example.org&quot;</span>
+<span class="nv">API_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;api.example.org&quot;</span>
+<span class="nv">TELEPORT_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;teleport.example.org&quot;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">LETSENCRYPT_STAGING</span></code> setting only works for valid URLs (so <em>example.org</em> will not work).
+For local deployment using self-signed certificates this can remain at it’s recommended value of “0”.
+When moving to production and testing there, consider changing this to “1” to avoid the imposed rate limits.</p>
+</div>
+<section id="certbot">
+<h2>Certbot<a class="headerlink" href="#certbot" title="Link to this heading"></a></h2>
+<p>If certbot based certificates are to be obtained, the <code class="file docutils literal notranslate"><span class="pre">init.sh</span></code> will automatically call the <code class="file docutils literal notranslate"><span class="pre">certbot.sh</span></code> script, which in turn starts up both the certbot and nginx docker containers.
+The certificates are stored in <code class="file docutils literal notranslate"><span class="pre">/srv/docker/certbot/conf/live/${NGINX_PRIMARY_DOMAIN}</span></code> (which are actually just soft links).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If running on arm-server make sure to select the correct docker image for certbot (<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">certbot/certbot:arm64v8-latest</span></code>), this should already be considered by the init script but if you’re seeing some “exec format” issues this is likely the cause.</p>
+</div>
+</section>
+<section id="self-signed">
+<h2>Self-signed<a class="headerlink" href="#self-signed" title="Link to this heading"></a></h2>
+<p>This approach aims to reproduce the certbot directory and file structure so transitioning from testing to production setup is streamlined.</p>
+<p>Similar to the certbot based setup, the <code class="file docutils literal notranslate"><span class="pre">init.sh</span></code> will generate the <code class="file docutils literal notranslate"><span class="pre">.env</span></code> file.
+However, the <code class="file docutils literal notranslate"><span class="pre">certbot.sh</span></code> script is not called and the nginx container needs to be manually started after performing all steps below to generate a custom CA, adding it to clients</p>
+<section id="creation-of-private-key-and-root-certificate">
+<h3>Creation of private key and root certificate<a class="headerlink" href="#creation-of-private-key-and-root-certificate" title="Link to this heading"></a></h3>
+<p>Make a folder to hold the certificates and <strong>make sure this folder, its subdirectories, and the files contained in it are in your gitignore file to exclude them from going public</strong>.
+However, you should backup the certificate files.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mdkir<span class="w"> </span>certs
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>certs
+</pre></div>
+</div>
+<p>Generate a private key and set a passphrase during the procedure:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>genrsa<span class="w"> </span>-des3<span class="w"> </span>-out<span class="w"> </span>exampleCA.key<span class="w"> </span><span class="m">2048</span>
+</pre></div>
+</div>
+<p>Now generate the root certificate:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>req<span class="w"> </span>-x509<span class="w"> </span>-new<span class="w"> </span>-nodes<span class="w"> </span>-key<span class="w"> </span>exampleCA.key<span class="w"> </span>-sha256<span class="w"> </span>-days<span class="w"> </span><span class="m">1825</span><span class="w"> </span>-out<span class="w"> </span>exampleCA.pem
+</pre></div>
+</div>
+</section>
+<section id="adding-the-root-certificate-to-linux-all-clients">
+<h3>Adding the Root Certificate to Linux (all clients)<a class="headerlink" href="#adding-the-root-certificate-to-linux-all-clients" title="Link to this heading"></a></h3>
+<p>If it is not already installed, install the <em>ca-certificates</em> package with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates
+</pre></div>
+</div>
+<p>Copy the <cite>exampleCA.pem</cite> file to the <cite>/usr/local/share/ca-certificates</cite> directory as a <cite>exampleCA.crt</cite> file.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>cp<span class="w"> </span>./exampleCA.pem<span class="w"> </span>/usr/local/share/ca-certificates/exampleCA.crt
+</pre></div>
+</div>
+<p>Finally, update the certificate store.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>update-ca-certificates
+</pre></div>
+</div>
+<p>You can test that the certificate has been installed by running the following command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>awk<span class="w"> </span>-v<span class="w"> </span><span class="nv">cmd</span><span class="o">=</span><span class="s1">&#39;openssl x509 -noout -subject&#39;</span><span class="w"> </span><span class="s1">&#39;/BEGIN/{close(cmd)};{print | cmd}&#39;</span><span class="w"> </span>&lt;<span class="w"> </span>/etc/ssl/certs/ca-certificates.crt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep
+</pre></div>
+</div>
+<p>and appending one of the information provided during the root certificate creation process as grep input.</p>
+</section>
+<section id="creating-ca-signed-certificates-for-your-dev-sites">
+<h3>Creating CA-Signed Certificates for Your Dev Sites<a class="headerlink" href="#creating-ca-signed-certificates-for-your-dev-sites" title="Link to this heading"></a></h3>
+<p>Now we are a CA on all our devices and we can sign certificates for any new dev sites that need HTTPS.
+First, we create a private key for the dev site.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>genrsa<span class="w"> </span>-out<span class="w"> </span>privkey.pem<span class="w"> </span><span class="m">2048</span>
+</pre></div>
+</div>
+<p>Then we create a CSR:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>req<span class="w"> </span>-new<span class="w"> </span>-key<span class="w"> </span>privkey.pem<span class="w"> </span>-out<span class="w"> </span>example.org.csr
+</pre></div>
+</div>
+<p>Now create a config file for each url to define the subject alternative name (SAN)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>nano<span class="w"> </span>example.org.ext
+</pre></div>
+</div>
+<p>with the following content</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">authorityKeyIdentifier</span><span class="o">=</span>keyid,issuer
+<span class="nv">basicConstraints</span><span class="o">=</span>CA:FALSE
+<span class="nv">keyUsage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>digitalSignature,<span class="w"> </span>nonRepudiation,<span class="w"> </span>keyEncipherment,<span class="w"> </span>dataEncipherment
+<span class="nv">subjectAltName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>@alt_names
+
+<span class="o">[</span>alt_names<span class="o">]</span>
+DNS.1<span class="w"> </span><span class="o">=</span><span class="w"> </span>app.example.org
+DNS.2<span class="w"> </span><span class="o">=</span><span class="w"> </span>api.example.org
+DNS.3<span class="w"> </span><span class="o">=</span><span class="w"> </span>auth.example.org
+DNS.4<span class="w"> </span><span class="o">=</span><span class="w"> </span>eln.example.org
+DNS.5<span class="w"> </span><span class="o">=</span><span class="w"> </span>grafana.example.org
+DNS.6<span class="w"> </span><span class="o">=</span><span class="w"> </span>teleport.example.org
+</pre></div>
+</div>
+<p>Then run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>x509<span class="w"> </span>-req<span class="w"> </span>-in<span class="w"> </span>example.org.csr<span class="w"> </span>-CA<span class="w"> </span>exampleCA.pem<span class="w"> </span>-CAkey<span class="w"> </span>exampleCA.key<span class="w"> </span><span class="se">\</span>
+-CAcreateserial<span class="w"> </span>-out<span class="w"> </span>cert.pem<span class="w"> </span>-days<span class="w"> </span><span class="m">825</span><span class="w"> </span>-sha256<span class="w"> </span>-extfile<span class="w"> </span>example.org.ext
+</pre></div>
+</div>
+</section>
+<section id="complete-certbot-like-folder-and-file-system">
+<h3>Complete certbot like folder and file system<a class="headerlink" href="#complete-certbot-like-folder-and-file-system" title="Link to this heading"></a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cat<span class="w"> </span>cert.pem<span class="w"> </span>exampleCA.pem<span class="w"> </span>&gt;<span class="w"> </span>fullchain.pem
+<span class="gp">$ </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/docker/certbot/conf/live/example.org/
+<span class="gp">$ </span>sudo<span class="w"> </span>cp<span class="w"> </span>cert.pem<span class="w"> </span>fullchain.pem<span class="w"> </span>privkey.pem<span class="w"> </span>/srv/docker/certbot/conf/live/example.org/
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>openssl<span class="w"> </span>dhparam<span class="w"> </span>-out<span class="w"> </span>ssl-dhparams.pem<span class="w"> </span><span class="m">2048</span>
+<span class="gp">$ </span>sudo<span class="w"> </span>cp<span class="w"> </span>ssl-dhparams.pem<span class="w"> </span>/srv/docker/certbot/conf/
+</pre></div>
+</div>
+</section>
+<section id="remaining-settings">
+<h3>Remaining settings<a class="headerlink" href="#remaining-settings" title="Link to this heading"></a></h3>
+<section id="dns">
+<h4>DNS<a class="headerlink" href="#dns" title="Link to this heading"></a></h4>
+<p>Resolving the domain names for all services can either be done by adding them to the nameserver.
+Alternatively, all domain lookups can be added to a machine’s host file.
+Locate the host file and add the following lines (replace 127.0.0.1 with the host running the services):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">127.0.0.1           example.org</span>
+<span class="go">127.0.0.1           app.example.org</span>
+<span class="go">127.0.0.1           api.example.org</span>
+<span class="go">127.0.0.1           auth.example.org</span>
+<span class="go">127.0.0.1           grafana.example.org</span>
+<span class="go">127.0.0.1           teleport.example.org</span>
+<span class="go">127.0.0.1           eln.example.org</span>
+</pre></div>
+</div>
+<p><strong>Windows path:</strong> <code class="docutils literal notranslate"><span class="pre">c:\Windows\System32\Drivers\etc\hosts</span></code></p>
+<p><strong>Linux path:</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code></p>
+</section>
+<section id="firefox-settings">
+<h4>Firefox settings<a class="headerlink" href="#firefox-settings" title="Link to this heading"></a></h4>
+<ol class="arabic simple">
+<li><p>Start Firefox</p></li>
+<li><p>Go to Settings &gt; Privacy &amp; Security</p></li>
+<li><p>Under Certificates, click “View Certificates…”</p></li>
+<li><p>In the Certificate Manager, click the Authorities tab</p></li>
+<li><p>Click the Import button to import the created <code class="docutils literal notranslate"><span class="pre">exampleCA.pem</span></code></p></li>
+</ol>
+<p>You might be prompted to set the trust level upon importing the certificate.
+If not, you can do that manually via the ‘Edit Trust’ button.</p>
+<section id="grafana">
+<h5>Grafana<a class="headerlink" href="#grafana" title="Link to this heading"></a></h5>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>See Grafana for details on how to make sure Grafana is working with oauth2 when using self-signed certificates.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Server setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="teleport.html" class="btn btn-neutral float-right" title="Teleport Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nils Stanislawski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

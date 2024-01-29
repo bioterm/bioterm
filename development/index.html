@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../_static/bioterm_icon.svg" rel="icon" type="image/svg+xml">
+    <link href="../_static/bioterm_icon_16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../_static/bioterm_icon_32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="../_static/bioterm_icon_180x180.png" sizes="180x180" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development &mdash; bioterm 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Coding Style Guide" href="documentation.html" />
+    <link rel="prev" title="Controller" href="../deployment/controller/index.html" />
+    <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bioterm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generalities.html">General Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment/index.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html">Coding Style Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server/index.html">Server Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controller/index.html">Controller Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devices/index.html">Devices Development</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bioterm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Development</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/development/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="development">
+<h1>Development<a class="headerlink" href="#development" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="prerequisits">
+<h2>Prerequisits<a class="headerlink" href="#prerequisits" title="Link to this heading"></a></h2>
+<p>The ${BIOTERM_ROOT_DIRECTORY} contains an additional <code class="file docutils literal notranslate"><span class="pre">requirements_dev.txt</span></code> file for developers.
+Use</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements_dev.txt
+</pre></div>
+</div>
+<p>after having your virtual environment activated, to install the additional packages required for developing.
+Then, run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pre-commit<span class="w"> </span>install<span class="w">  </span><span class="c1"># installs .git/hooks/pre-commit</span>
+<span class="gp">$ </span>pre-commit<span class="w"> </span>install<span class="w"> </span>--hook-type<span class="w"> </span>pre-push<span class="w">  </span><span class="c1"># installs .git/hooks/pre-push</span>
+</pre></div>
+</div>
+<p>to set up the git hook scripts stored in <code class="file docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> in the <code class="file docutils literal notranslate"><span class="pre">.git/hooks</span></code> directory.</p>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading"></a></h2>
+<p>When deploying on a local machine, certain settings need to be adopted to ease the development.
+This especially concerns the server backend and frontend, which are dockerized for production deployment and
+The nginx configuration needs to be adopted as well, to point to either the docker container’s host adress or the local machine’s localhost.</p>
+<p>In addition, on a local machine self-signed certificates are used and TLS verification needs to be disabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t forget to turn TLS verification back on when deploying for production, as this might get by unnoticed.</p>
+</div>
+<section id="backend">
+<h3>Backend<a class="headerlink" href="#backend" title="Link to this heading"></a></h3>
+<p>In the <code class="file docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file, uncomment the ports directive for the <em>timescaledb</em> service:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span>
+<span class="w">    </span><span class="nt">timescaledb</span><span class="p">:</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432:5432</span>
+<span class="nn">...</span>
+</pre></div>
+</div>
+<p>Also, disable the <em>biotermserverapi</em> service completely by commenting out the whole service and its directives.</p>
+<p>Then, change the environment variable <strong>POSTGRES_SERVER</strong> from <em>timescaledb:5432</em> to <em>localhost:5432</em>.</p>
+<p>Set the environment variable <strong>USE_TLS</strong> to <em>False</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>FastAPI requires Python 3.9 !</p>
+</div>
+<p>Then, set up a virtual environment and install the required packages located in <code class="file docutils literal notranslate"><span class="pre">bioterm/server/backend/requirements.txt</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python3.9<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>run</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>in <code class="file docutils literal notranslate"><span class="pre">bioterm/server/backend</span></code> to start the PostgreSQL service.</p>
+<p>To run the server use the following command in the bioterm root directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>uvicorn<span class="w"> </span>bioterm.server.backend.app.main:app<span class="w"> </span>--reload<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8001</span>
+</pre></div>
+</div>
+</section>
+<section id="frontend">
+<h3>Frontend<a class="headerlink" href="#frontend" title="Link to this heading"></a></h3>
+<p>For information regarding frontend development, please refer to <a class="reference internal" href="server/webui.html"><span class="doc">webUI</span></a>.</p>
+</section>
+<section id="nginx">
+<h3>NGINX<a class="headerlink" href="#nginx" title="Link to this heading"></a></h3>
+<p>For local development, change the API section configuration as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### API SECTION</span>
+
+server<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>...
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="c1"># set $api_upstream http://biotermserverapi:8001;</span>
+<span class="w">        </span><span class="c1"># proxy_pass $api_upstream;</span>
+<span class="w">        </span>proxy_pass<span class="w"> </span>http://host.docker.internal:8001<span class="p">;</span>
+
+<span class="w">        </span>...
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Change the APP section as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">### APP SECTION</span>
+
+server<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>...
+
+<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="c1"># set $app_upstream http://bioterm-webui:8081;</span>
+<span class="w">        </span><span class="c1"># proxy_pass $app_upstream;</span>
+<span class="w">        </span>proxy_pass<span class="w"> </span>http://host.docker.internal:8081/<span class="p">;</span>
+
+<span class="w">        </span>...
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="authentik">
+<h3>authentik<a class="headerlink" href="#authentik" title="Link to this heading"></a></h3>
+</section>
+</section>
+<section id="commmitlint">
+<h2>Commmitlint<a class="headerlink" href="#commmitlint" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">feat</span></code>: new feature</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fix</span></code>: bug fix</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs</span></code>: changes to the documentation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">style</span></code>: formatting, missing semi colons, etc; no production code change</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">refactor</span></code>: refactoring production code, eg. renaming a variable, moving stuff around</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test</span></code>: adding missing tests, refactoring tests; no production code change</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chore</span></code>: TBD</p></li>
+</ul>
+</section>
+<section id="coding-style">
+<h2>Coding Style<a class="headerlink" href="#coding-style" title="Link to this heading"></a></h2>
+<p>Please check <a class="reference internal" href="documentation.html"><span class="doc">Coding Style Guide</span></a> for details.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../deployment/controller/index.html" class="btn btn-neutral float-left" title="Controller" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="documentation.html" class="btn btn-neutral float-right" title="Coding Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nils Stanislawski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

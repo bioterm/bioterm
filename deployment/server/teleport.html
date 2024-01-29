@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_static/bioterm_icon.svg" rel="icon" type="image/svg+xml">
+    <link href="../../_static/bioterm_icon_16x16.png" sizes="16x16" rel="icon" type="image/png">
+    <link href="../../_static/bioterm_icon_32x32.png" sizes="32x32" rel="icon" type="image/png">
+    <link rel="apple-touch-icon" href="../../_static/bioterm_icon_180x180.png" sizes="180x180" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teleport Setup &mdash; bioterm 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=35a8b989"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Authentik Setup" href="authentik.html" />
+    <link rel="prev" title="Certificates &amp; Reverse Proxy" href="certificates.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            bioterm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../generalities.html">General Specifications</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Deployment</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../network.html">Network Settings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Server setup</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="certificates.html">Certificates &amp; Reverse Proxy</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Teleport Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentik.html">Authentik Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elabftw.html">elabftw Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="grafana.html">Grafana Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html">bioterm Backend Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html">App</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../controller/index.html">Controller</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../development/index.html">Development</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">bioterm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Deployment</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Server setup</a></li>
+      <li class="breadcrumb-item active">Teleport Setup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/deployment/server/teleport.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="teleport-setup">
+<span id="id1"></span><h1>Teleport Setup<a class="headerlink" href="#teleport-setup" title="Link to this heading"></a></h1>
+<section id="host">
+<h2>Host<a class="headerlink" href="#host" title="Link to this heading"></a></h2>
+<section id="docker-setup">
+<h3>Docker setup<a class="headerlink" href="#docker-setup" title="Link to this heading"></a></h3>
+<p>Navigate to <code class="file docutils literal notranslate"><span class="pre">bioterm/bioterm/server/teleport/</span></code> and create a <code class="file docutils literal notranslate"><span class="pre">.env</span></code>-file with the content</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">TELEPORT_PUBLIC_DOMAIN</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TELEPORT_PUBLIC_DOMAIN</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Afterwards, run the init.sh script.
+This will create a <code class="file docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file in the local directory and write the teleport configuration to <code class="file docutils literal notranslate"><span class="pre">/srv/docker/teleport/teleport.yaml</span></code>.
+The <code class="file docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> is tailored to the underlying operating system of the server.
+The teleport docker container will be started automatically.</p>
+<p>To create the first user, enter the Teleport container with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>teleport<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>In the container shell, enter</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tctl<span class="w"> </span>users<span class="w"> </span>add<span class="w"> </span>teleport-admin<span class="w"> </span>--roles<span class="o">=</span>editor,access,auditor<span class="w"> </span>--logins<span class="o">=</span>root,ubuntu,ec2-user
+</pre></div>
+</div>
+<p>to create a user name <em>teleport-admin</em> with the roles to access nodes, edit the teleport settings, and use the auditing feature.
+The output of this command will provide a URL, to create the new user.</p>
+<p>The users specified in the logins flag (e.g., <em>root</em>, <em>ubuntu</em> and <em>ec2-user</em>) must exist on the Linux host.
+Otherwise, an authentication error will be thrown when establishing a connection.</p>
+<p>The use of two-factor authentication is enforced.
+A QRcode is provided during the user setup stage in the webUI to use with an authenticator app.</p>
+</section>
+<section id="adding-host-to-server-list">
+<h3>Adding host to server list<a class="headerlink" href="#adding-host-to-server-list" title="Link to this heading"></a></h3>
+<p>To add the host running the Teleport docker container to the list of accessible servers, teleport needs to be installed manually.
+On the host device, as root user, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://deb.releases.teleport.dev/teleport-pubkey.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>&gt;<span class="w"> </span>/etc/apt/trusted.gpg.d/teleport.gpg
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb https://deb.releases.teleport.dev/ stable main&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/apt/sources.list.d/teleport.list
+apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>teleport
+</pre></div>
+</div>
+<p>In the webUI, navigate to <span class="menuselection">Servers</span> → <span class="menuselection">ADD SERVER</span> and select <em>Ubuntu</em> from the list.
+Using the browser, navigate to the URL stated in the <em>Command</em> section of the guided resource setup.
+From there, extract the <strong>JOIN_TOKEN</strong> and run the following command after replacing the nodename, auth_token, and auth_servers values:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/teleport.yaml<span class="w"> </span><span class="s">&lt;&lt; &#39;EOL&#39;</span>
+<span class="s">teleport:</span>
+<span class="s">   nodename: ${NODE_NAME}</span>
+<span class="s">   auth_token: ${JOIN_TOKEN}</span>
+<span class="s">   auth_servers:</span>
+<span class="s">   - teleport.example.org:443</span>
+<span class="s">   log:</span>
+<span class="s">       output: stderr</span>
+<span class="s">       severity: INFO</span>
+<span class="s">auth_service:</span>
+<span class="s">enabled: no</span>
+<span class="s">ssh_service:</span>
+<span class="s">enabled: yes</span>
+<span class="s">proxy_service:</span>
+<span class="s">enabled: no</span>
+<span class="s">EOL</span>
+</pre></div>
+</div>
+<p>Then, create a Teleport agent systemd service unit file if not already existing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>&gt;<span class="w"> </span>/lib/systemd/system/teleport.service<span class="w"> </span><span class="s">&lt;&lt; &#39;EOL&#39;</span>
+<span class="s">[Unit]</span>
+<span class="s">Description=Teleport SSH Service</span>
+<span class="s">After=network.target</span>
+
+<span class="s">[Service]</span>
+<span class="s">Type=simple</span>
+<span class="s">Restart=on-failure</span>
+<span class="s">EnvironmentFile=-/etc/default/teleport</span>
+<span class="s">ExecStart=/usr/local/bin/teleport start --pid-file=/run/teleport.pid</span>
+<span class="s">ExecReload=/bin/kill -HUP $MAINPID</span>
+<span class="s">PIDFile=/run/teleport.pid</span>
+<span class="s">LimitNOFILE=8192</span>
+
+<span class="s">[Install]</span>
+<span class="s">WantedBy=multi-user.target</span>
+<span class="s">EOL</span>
+</pre></div>
+</div>
+<p>Finally, reload the systemd unit files and start and enable Teleport to run on boot:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>teleport
+systemctl<span class="w"> </span>start<span class="w"> </span>teleport
+</pre></div>
+</div>
+</section>
+</section>
+<section id="clients">
+<h2>Clients<a class="headerlink" href="#clients" title="Link to this heading"></a></h2>
+<p>Using the webUI, navigate to <span class="menuselection">Resources</span> → <span class="menuselection">Servers</span> → <span class="menuselection">ADD SERVER</span>.
+Select the appropriate distro (most likely Ubuntu) and run the stated <em>Command</em> on the client.</p>
+<section id="ssh-access-for-existing-client-users">
+<h3>SSH access for existing client users<a class="headerlink" href="#ssh-access-for-existing-client-users" title="Link to this heading"></a></h3>
+<p>Using the webUI, navigate to <span class="menuselection">Management</span> → <span class="menuselection">Roles</span> and modify the <em>logins</em> section of the <strong>access</strong> role:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">allow</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">logins</span><span class="p p-Indicator">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;{{internal.logins}}&#39;</span><span class="w"> </span><span class="c1"># default logins for access role</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLIENT_USER}</span><span class="w"> </span><span class="c1"># local user account on client</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="certificates.html" class="btn btn-neutral float-left" title="Certificates &amp; Reverse Proxy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="authentik.html" class="btn btn-neutral float-right" title="Authentik Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nils Stanislawski.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
